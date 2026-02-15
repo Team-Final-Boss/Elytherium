@@ -6,6 +6,8 @@ public class MoveScript : MonoBehaviour
     public float velocidade = 6f;
     public float distanciaChao = 1.5f;
 
+    private ConfigScript configScript;
+
     private Rigidbody corpo;
     private bool noChao;
 
@@ -19,6 +21,9 @@ public class MoveScript : MonoBehaviour
         corpo.freezeRotation = true;
         corpo.interpolation = RigidbodyInterpolation.Interpolate;
         corpo.collisionDetectionMode = CollisionDetectionMode.Continuous;
+
+        GameObject gm = GameObject.FindGameObjectWithTag("GameController");
+        configScript = gm.GetComponent<ConfigScript>();
     }
 
     void Update()
@@ -39,7 +44,23 @@ public class MoveScript : MonoBehaviour
     {
         float moveX = 0f;
         float moveZ = 0f;
+     
+     if (configScript.controls == 1)
+        {
+            if (Input.GetKey(KeyCode.W))
+                moveZ = 1f;
 
+            if (Input.GetKey(KeyCode.S))
+                moveZ = -1f;
+
+            if (Input.GetKey(KeyCode.A))
+                moveX = -1f;
+
+            if (Input.GetKey(KeyCode.D))
+                moveX = 1f;
+        }
+        else if (configScript.controls == 0)
+        {
         if (Input.GetKey(KeyCode.UpArrow))
             moveZ = 1f;
 
@@ -51,6 +72,7 @@ public class MoveScript : MonoBehaviour
 
         if (Input.GetKey(KeyCode.RightArrow))
             moveX = 1f;
+        }
 
         Vector3 direcao = transform.forward * moveZ + transform.right * moveX;
         direcao.Normalize();
@@ -72,5 +94,5 @@ public class MoveScript : MonoBehaviour
         }
 
         corpo.linearVelocity = velocidadeAtual;
-    }
-}
+    
+}}
