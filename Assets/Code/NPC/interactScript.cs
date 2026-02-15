@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class interactScript : MonoBehaviour
 {
@@ -23,6 +24,9 @@ public class interactScript : MonoBehaviour
                 break;
             case 1:
             saveScript.LoadGame();
+            break;
+            case 2:
+            SceneManager.LoadScene(3);
             break;
             default:
                 Debug.Log("interact with nothing");
