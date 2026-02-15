@@ -10,6 +10,8 @@ public class batteryReceiver : MonoBehaviour
 
     public GameObject bridge;
 
+    public GameObject wall;
+
     public MoveScript moveScript;
 
     public float time = 3f;
@@ -69,6 +71,7 @@ public class batteryReceiver : MonoBehaviour
             else if(time <= 2)
             {
                  bridge.SetActive(true);
+                 wall.SetActive(false);
             }
 
 

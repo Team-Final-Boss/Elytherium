@@ -1,15 +1,18 @@
 using UnityEngine;
+using TMPro;
 
 public class interact : MonoBehaviour
 {
     private interactScript objetoAtual;
+
+
     public TMPro.TextMeshProUGUI text;
 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Interactable"))
         {
-            text.text = "Press E to interact";
+            text.text = "Pressione E para interagir";
             objetoAtual = other.GetComponent<interactScript>();
         }
     }

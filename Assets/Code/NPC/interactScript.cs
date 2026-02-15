@@ -28,6 +28,16 @@ public class interactScript : MonoBehaviour
             case 2:
             SceneManager.LoadScene(3);
             break;
+            case 3:
+            dialogueScript dialogueScript = GetComponent<dialogueScript>();
+            dialogueScript.showDialogue();
+            break;
+            case 4:
+            saveScript.missionComplete = 2;
+            TMPro.TextMeshProUGUI text = GameObject.FindGameObjectWithTag("InteractText").GetComponent<TMPro.TextMeshProUGUI>();
+            text.text = "";
+            Destroy(gameObject);
+            break;
             default:
                 Debug.Log("interact with nothing");
                 break;
