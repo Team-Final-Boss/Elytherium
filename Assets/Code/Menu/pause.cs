@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class pause : MonoBehaviour
 {
@@ -11,10 +12,6 @@ public class pause : MonoBehaviour
         
     }
 
-    void Awake()
-{
-    DontDestroyOnLoad(gameObject);
-}
  
 
     // Update is called once per frame
@@ -44,5 +41,11 @@ public class pause : MonoBehaviour
         Time.timeScale = 1f;
         player.GetComponent<MoveScript>().enabled = true;
         pauseMenu.SetActive(false);
+    }
+
+    public void exitToMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(0);
     }
 }

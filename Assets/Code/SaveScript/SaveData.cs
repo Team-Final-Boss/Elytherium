@@ -7,5 +7,7 @@ public class SaveData
     public int missionComplete;
     public int Elytherium;
     public int moral;
+
+    public int timesaved;
 }
 

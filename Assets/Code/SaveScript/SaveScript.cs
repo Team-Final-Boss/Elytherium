@@ -9,6 +9,9 @@ public class SaveScript : MonoBehaviour
     public int Elytherium = 0;
 
     public int moral = 50;
+
+    public int timesaved = 0;
+
    
     private string savePath;
 
@@ -30,6 +33,7 @@ void Awake()
         data.missionComplete = missionComplete;
         data.Elytherium = Elytherium;
         data.moral = moral;
+        data.timesaved = timesaved;
 
         string json = JsonUtility.ToJson(data, true);
 
@@ -50,6 +54,7 @@ void Awake()
             missionComplete = data.missionComplete;
             Elytherium = data.Elytherium;
             moral = data.moral;
+            timesaved = data.timesaved;
 
             Debug.Log("Jogo carregado!");
         }

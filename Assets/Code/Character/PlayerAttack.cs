@@ -9,10 +9,38 @@ public class PlayerAttack : MonoBehaviour
     public Transform transformArma;
     public float time = timeToAttack;
 
+    private ConfigScript configScript;
+        
+
 
 
     void changeArmaPos()
     {
+    
+    if(configScript.controls == 1)
+        {
+            if (Input.GetKeyDown(KeyCode.A) || Input.GetKey(KeyCode.A) && !Input.GetKeyDown(KeyCode.S) && !Input.GetKeyDown(KeyCode.W))
+            {
+                transformArma.localPosition = new Vector3(-0.78999263f,-0.172436416f,-0.0415452421f);
+            }
+
+            else if (Input.GetKeyDown(KeyCode.S) || Input.GetKey(KeyCode.S))
+            {
+                transformArma.localPosition = new Vector3(-0.0299999993f,-0.172436416f,-1.32000005f);
+            }
+
+            else if (Input.GetKeyDown(KeyCode.D) || Input.GetKey(KeyCode.D))
+            {
+                transformArma.localPosition = new Vector3(0.785000026f,-0.172436416f,-0.0415452421f);
+            }
+
+            else if (Input.GetKeyDown(KeyCode.W) || Input.GetKey(KeyCode.W) && !Input.GetKeyDown(KeyCode.A) && !Input.GetKeyDown(KeyCode.S) && !Input.GetKeyDown(KeyCode.D))
+            {
+                transformArma.localPosition = new Vector3(-0.0299999993f,-0.172436416f,1.38999999f);
+            }
+        }
+        else if(configScript.controls == 0)
+            {
         if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKey(KeyCode.LeftArrow) && !Input.GetKeyDown(KeyCode.DownArrow) && !Input.GetKeyDown(KeyCode.UpArrow))
         {
             transformArma.localPosition = new Vector3(-0.78999263f,-0.172436416f,-0.0415452421f);
@@ -31,7 +59,7 @@ public class PlayerAttack : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKey(KeyCode.UpArrow) && !Input.GetKeyDown(KeyCode.LeftArrow) && !Input.GetKeyDown(KeyCode.DownArrow) && !Input.GetKeyDown(KeyCode.RightArrow))
         {
             transformArma.localPosition = new Vector3(-0.0299999993f,-0.172436416f,1.38999999f);
-        }
+        }}
     }
     void UpdateTime()
     {
@@ -51,7 +79,8 @@ public class PlayerAttack : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        GameObject gm = GameObject.FindGameObjectWithTag("GameController");
+        configScript = gm.GetComponent<ConfigScript>();
     }
 
     // Update is called once per frame

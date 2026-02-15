@@ -3,10 +3,11 @@ using UnityEngine;
 public class interactScript : MonoBehaviour
 {
     public int id = 0;
-    public SaveScript saveScript;
+    private SaveScript saveScript;
     void Start()
     {
-        
+        GameObject gm = GameObject.FindGameObjectWithTag("GameController");
+        saveScript = gm.GetComponent<SaveScript>();
     }
 
 
@@ -17,6 +18,7 @@ public class interactScript : MonoBehaviour
         {
             case 0:
                 saveScript.saveLocation = 1;
+                saveScript.timesaved += 1;
                 saveScript.SaveGame();
                 break;
             case 1:
