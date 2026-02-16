@@ -7,5 +7,13 @@ public class Attack : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
+        if(other.gameObject.tag == "Damaged")
+        {
+            Damaged damaged = other.gameObject.GetComponent<Damaged>();
+            if (damaged != null)
+            {
+                damaged.TakeDamage(1);
+            }
+        }
     }
 }
