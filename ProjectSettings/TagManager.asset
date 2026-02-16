@@ -7,6 +7,10 @@ TagManager:
   - Destructible
   - Interactable
   - Battery
+  - InteractText
+  - Alert
+  - Damaged
+  - Rock
   layers:
   - Default
   - TransparentFX

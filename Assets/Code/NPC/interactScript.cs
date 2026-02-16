@@ -5,10 +5,17 @@ public class interactScript : MonoBehaviour
 {
     public int id = 0;
     private SaveScript saveScript;
+
+    public GameObject alert;
     void Start()
     {
         GameObject gm = GameObject.FindGameObjectWithTag("GameController");
         saveScript = gm.GetComponent<SaveScript>();
+        if(alert == null)
+        {
+            alert = GameObject.FindGameObjectWithTag("Alert");
+        }
+        
     }
 
 
@@ -27,6 +34,21 @@ public class interactScript : MonoBehaviour
             break;
             case 2:
             SceneManager.LoadScene(3);
+            break;
+            case 3:
+            dialogueScript dialogueScript = GetComponent<dialogueScript>();
+            dialogueScript.showDialogue();
+            break;
+            case 4:
+            saveScript.missionComplete = 2;
+            TMPro.TextMeshProUGUI text = GameObject.FindGameObjectWithTag("InteractText").GetComponent<TMPro.TextMeshProUGUI>();
+            text.text = "";
+            Destroy(gameObject);
+            break;
+            case 5:
+            if(saveScript.missionComplete == 2){
+            saveScript.missionComplete = 3;}
+            alert.SetActive(true);
             break;
             default:
                 Debug.Log("interact with nothing");
