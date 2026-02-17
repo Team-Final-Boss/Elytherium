@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 337374280984487003}
   - component: {fileID: 5140089684019908386}
   - component: {fileID: 7004816377755428640}
+  - component: {fileID: 5320965281259975485}
   - component: {fileID: 426119611124629255}
   - component: {fileID: 420466341656163861}
   - component: {fileID: 4342407400776484110}
@@ -146,6 +147,19 @@ MonoBehaviour:
   velocidade: 10
   distanciaChao: 1.5
   dragForce: 50
+--- !u!114 &5320965281259975485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104340846818027014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12b74c444d323204e91dfe329255cf68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AttackManager
+  weapon: {fileID: 420466341656163861}
 --- !u!54 &426119611124629255
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -472,7 +486,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.49999997
   m_Height: 1
@@ -626,8 +640,10 @@ GameObject:
   - component: {fileID: 6495800721554796841}
   - component: {fileID: 1183808389366629385}
   - component: {fileID: 3874128210098741820}
+  - component: {fileID: 1273697159317583032}
+  - component: {fileID: 7305426960306072109}
   m_Layer: 0
-  m_Name: Cartman
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -641,13 +657,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7916988264003899872}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.29761013, y: 0.65565175, z: 2.937947}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: 0, y: 0.078459114, z: 0, w: 0.99691737}
+  m_LocalPosition: {x: 0, y: 0.6, z: 0}
+  m_LocalScale: {x: 4.46, y: 9.825629, z: 44.028217}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 8316263390748659813}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 9, z: 0}
 --- !u!212 &1183808389366629385
 SpriteRenderer:
   serializedVersion: 2
@@ -697,7 +713,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 51a2af0cc9504ae4fae6ed9491dfa0ce, type: 3}
+  m_Sprite: {fileID: 1371441711, guid: 76a5dce20ac33624885deb7c05441cc8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -721,3 +737,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::lookingAt
   player: {fileID: 5517520311601918033}
   onlyY: 1
+--- !u!95 &1273697159317583032
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7916988264003899872}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 427acddbf179bfd409005dd23f631d39, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7305426960306072109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7916988264003899872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27f036c40b6664a4cb13006ddda1c22a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Walk
