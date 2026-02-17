@@ -5,7 +5,9 @@ public class dialogueManager : MonoBehaviour
    public int dialogoAtual = 1;
 
    public dialogueScript Dialogue;
-   private const int totalDialogos = 3;
+
+   public bool NotpressToPass = false;
+   public int totalDialogos = 3;
     void Start()
     {
         
@@ -14,7 +16,7 @@ public class dialogueManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if(Input.GetKeyDown(KeyCode.E))
+       if(Input.GetKeyDown(KeyCode.E) && !NotpressToPass)
        {
            passDialogue();
        }

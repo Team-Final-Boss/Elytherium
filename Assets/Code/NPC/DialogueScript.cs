@@ -4,17 +4,18 @@ public class dialogueScript : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
    public GameObject dialogueBox;
-   private MoveScript moveScript;
+   public MoveScript moveScript;
 
    public GameObject interactArea;
 
   
 
-    public TMPro.TextMeshProUGUI text;
+    public TMPro.TextMeshProUGUI textInteract;
     void Start()
     {
+        if(moveScript == null){
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        moveScript = player.GetComponent<MoveScript>();
+        moveScript = player.GetComponent<MoveScript>();}
     }
    
    public void showDialogue()
@@ -22,7 +23,7 @@ public class dialogueScript : MonoBehaviour
         interactArea.SetActive(false);
 
         moveScript.enabled = false;
-        text.text = "";
+        textInteract.text = "";
         dialogueBox.SetActive(true);
     }
 
