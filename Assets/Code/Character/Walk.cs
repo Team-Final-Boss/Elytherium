@@ -6,6 +6,8 @@ public class Walk : MonoBehaviour
     private ConfigScript configScript;
     
     Animator animator;
+    SpriteRenderer spriteRenderer;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -14,6 +16,7 @@ public class Walk : MonoBehaviour
         configScript = gm.GetComponent<ConfigScript>();
 
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -39,6 +42,11 @@ public class Walk : MonoBehaviour
                     (Input.GetKey(KeyCode.LeftArrow) ? 1 : 0);
         }
 
+        if (moveX != 0)
+        {
+            spriteRenderer.flipX = moveX < 0;
+        }
+
         Vector3 inputDir = new Vector3(moveX, 0, moveZ);
 
         bool condition = inputDir.magnitude > 0.1f;
@@ -47,7 +55,7 @@ public class Walk : MonoBehaviour
         animator.SetFloat("moveZ", moveZ);
         animator.SetBool("isWalking", condition);
 
-        
-        
+        Debug.Log("moveX: " + moveX + " moveZ: " + moveZ);
+        Debug.Log(spriteRenderer);
     }
 }
