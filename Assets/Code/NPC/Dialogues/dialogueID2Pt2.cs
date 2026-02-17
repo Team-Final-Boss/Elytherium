@@ -7,7 +7,7 @@ public class dialogueID2Pt2 : MonoBehaviour
 
     private SaveScript saveScript;
 
-    public Vector3 positionTeleport = new Vector3(0, 0, 0);
+    public Vector3 positionTeleportOther = new Vector3(0, 0, 0);
     public dialogueManager dialogueScript;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,8 +20,9 @@ public class dialogueID2Pt2 : MonoBehaviour
     {
         saveScript.missionComplete = 4;
         dialogueScript.dialogoAtual += 1;
+        blackscreen.StartTeleport(positionTeleportOther);
+        dialogueScript.passDialogue();
         gameObject.SetActive(false);
-        blackscreen.StartTeleport(positionTeleport);
         
     }
 
@@ -29,8 +30,10 @@ public class dialogueID2Pt2 : MonoBehaviour
     {
         saveScript.missionComplete = 4;
         dialogueScript.dialogoAtual += 1;
+        
+        blackscreen.StartTeleportOther(positionTeleportOther);
+        dialogueScript.passDialogue();
         gameObject.SetActive(false);
-        blackscreen.StartTeleportOther(positionTeleport);
     }
     
 }

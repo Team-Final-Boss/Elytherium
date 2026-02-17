@@ -47,7 +47,7 @@ public class Walk : MonoBehaviour
         animator.SetFloat("moveZ", moveZ);
         animator.SetBool("isWalking", condition);
 
-        Debug.Log("moveX: " + moveX + " moveZ: " + moveZ);
+        
         
     }
 }

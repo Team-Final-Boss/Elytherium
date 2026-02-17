@@ -27,7 +27,7 @@ public class interactScript : MonoBehaviour
         switch (id)
         {
             case 0:
-                saveScript.saveLocation = 1;
+                saveScript.saveLocation = SceneManager.GetActiveScene().buildIndex;
                 saveScript.timesaved += 1;
                 saveScript.SaveGame();
                 break;
