@@ -1433,6 +1433,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::interactScript
   id: 0
   alert: {fileID: 0}
+--- !u!1 &1597997889 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1104340846818027014, guid: fe73eb409f687424d877dffd990e9dc0, type: 3}
+  m_PrefabInstance: {fileID: 2096441919}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1744658381
 GameObject:
   m_ObjectHideFlags: 0
@@ -1664,7 +1669,7 @@ PrefabInstance:
     - target: {fileID: 4998588154170486709, guid: 8c8c790b510b6ca4d811f9b9004bfb30, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1597997889}
     - target: {fileID: 6829510223539966620, guid: 8c8c790b510b6ca4d811f9b9004bfb30, type: 3}
       propertyPath: m_SizeDelta.x
       value: 182.96
