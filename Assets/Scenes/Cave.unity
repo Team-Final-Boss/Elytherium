@@ -1676,9 +1676,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::dialogueScript
   dialogueBox: {fileID: 1490572708}
-  moveScript: {fileID: 0}
   interactArea: {fileID: 1420266193}
-  textInteract: {fileID: 1328242206}
+  text: {fileID: 1328242206}
 --- !u!1 &343399572
 GameObject:
   m_ObjectHideFlags: 0
@@ -7655,8 +7654,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::dialogueManager
   dialogoAtual: 1
   Dialogue: {fileID: 290733401}
-  NotpressToPass: 0
-  totalDialogos: 3
 --- !u!114 &1490572713
 MonoBehaviour:
   m_ObjectHideFlags: 0
