@@ -149,7 +149,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.39, y: 2.04, z: 0.56}
+  m_LocalScale: {x: 1.39, y: 2.04, z: 0.79352003}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1931488695782899684}
@@ -229,7 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MovimentoFP
   velocidade: 15
   distanciaChao: 1.5
-  dragForce: 50
+  dragForce: 10
 --- !u!114 &5320965281259975485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,7 +350,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.7, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 0.5, z: 6}
+  m_LocalScale: {x: 1.5, y: 0.5, z: 4.2342978}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8316263390748659813}
@@ -478,7 +478,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.7, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 0.5, z: 6}
+  m_LocalScale: {x: 1.5, y: 0.5, z: 4.2342978}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8316263390748659813}
@@ -603,8 +603,8 @@ Transform:
   m_GameObject: {fileID: 4362544871460943846}
   serializedVersion: 2
   m_LocalRotation: {x: 0.3994825, y: -0, z: -0, w: 0.91674083}
-  m_LocalPosition: {x: 0, y: 4.5, z: -15}
-  m_LocalScale: {x: 0.7194244, y: 0.6638489, z: 0.9138949}
+  m_LocalPosition: {x: 0, y: 4.5, z: -10.585744}
+  m_LocalScale: {x: 0.7194244, y: 0.6032017, z: 0.8462429}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8316263390748659813}
@@ -742,7 +742,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9456698, y: 0.65884334, z: 2.921148}
+  m_LocalScale: {x: 0.9456698, y: 0.65884334, z: 2.0615017}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 8316263390748659813}
@@ -854,3 +854,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27f036c40b6664a4cb13006ddda1c22a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Walk
+  moveScript: {fileID: 7004816377755428640}

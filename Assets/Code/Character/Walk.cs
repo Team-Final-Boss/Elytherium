@@ -4,7 +4,8 @@ using UnityEngine;
 public class Walk : MonoBehaviour
 {
     private ConfigScript configScript;
-    
+    public MoveScript moveScript;
+
     Animator animator;
     SpriteRenderer spriteRenderer;
 
@@ -14,6 +15,8 @@ public class Walk : MonoBehaviour
     {
         GameObject gm = GameObject.FindGameObjectWithTag("GameController");
         configScript = gm.GetComponent<ConfigScript>();
+       
+
 
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -25,32 +28,34 @@ public class Walk : MonoBehaviour
         float moveX = 0f;
         float moveZ = 0f;
 
-        if (configScript.controls == 1)
+        if (moveScript.enabled == true)
         {
-            moveZ = (Input.GetKey(KeyCode.W) ? 1 : 0) -
-                    (Input.GetKey(KeyCode.S) ? 1 : 0);
+            if (configScript.controls == 1)
+            {
+                moveZ = (Input.GetKey(KeyCode.W) ? 1 : 0) -
+                        (Input.GetKey(KeyCode.S) ? 1 : 0);
 
-            moveX = (Input.GetKey(KeyCode.D) ? 1 : 0) -
-                    (Input.GetKey(KeyCode.A) ? 1 : 0);
+                moveX = (Input.GetKey(KeyCode.D) ? 1 : 0) -
+                        (Input.GetKey(KeyCode.A) ? 1 : 0);
+            }
+            else
+            {
+                moveZ = (Input.GetKey(KeyCode.UpArrow) ? 1 : 0) -
+                        (Input.GetKey(KeyCode.DownArrow) ? 1 : 0);
+
+                moveX = (Input.GetKey(KeyCode.RightArrow) ? 1 : 0) -
+                        (Input.GetKey(KeyCode.LeftArrow) ? 1 : 0);
+            }
+
+            if (moveX != 0)
+            {
+                spriteRenderer.flipX = moveX < 0;
+            }
         }
-        else
-        {
-            moveZ = (Input.GetKey(KeyCode.UpArrow) ? 1 : 0) -
-                    (Input.GetKey(KeyCode.DownArrow) ? 1 : 0);
-
-            moveX = (Input.GetKey(KeyCode.RightArrow) ? 1 : 0) -
-                    (Input.GetKey(KeyCode.LeftArrow) ? 1 : 0);
-        }
-
-        if (moveX != 0)
-        {
-            spriteRenderer.flipX = moveX < 0;
-        }
-
         Vector3 inputDir = new Vector3(moveX, 0, moveZ);
 
         bool condition = inputDir.magnitude > 0.1f;
-        
+
         animator.SetFloat("moveX", moveX);
         animator.SetFloat("moveZ", moveZ);
         animator.SetBool("isWalking", condition);
