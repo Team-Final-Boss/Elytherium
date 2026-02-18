@@ -48,18 +48,29 @@ public class PlayerAttack : MonoBehaviour
         UpdateTime();
         ChangeArmaPos();
 
-        Debug.Log(configScript.controls);
+        
     }
 
     void Attack()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if(configScript.controls == 1)
         {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                playerArmaCollider.enabled = true;
+                Debug.Log(time);
+                Debug.Log(playerArmaCollider.enabled);
+            }
+        }
+        else
+        
+        {
+            if (Input.GetKeyDown(KeyCode.Z)){
             playerArmaCollider.enabled = true;
             Debug.Log(time);
-            Debug.Log(playerArmaCollider.enabled);
+            Debug.Log(playerArmaCollider.enabled);{}
         }
-    }
+    }}
 
     #endregion
 
