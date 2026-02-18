@@ -51,21 +51,33 @@ public class PlayerAnimationController : MonoBehaviour {
     /// </param>
     public void SetMovement(Vector3 inputDir)
     {
+        float magnitude = inputDir.magnitude;
+        bool walking = magnitude > 0.01f;
+
         if (inputDir.x != 0) spriteRenderer.flipX = inputDir.x < 0;
         
-        if (inputDir.magnitude > 0.1f)
+        animator.SetBool("isWalking", walking);
+
+        if (walking)
         {
             lastFacingDirection.x = inputDir.x;
             lastFacingDirection.y = inputDir.z;
+
+            /* the animator parameters are named moveX and moveZ to match the input direction's x and z components, which represent horizontal and vertical movement respectively. This allows the animator to use these parameters to determine the appropriate animation based on the player's movement direction.
+            
+            @oEnzoRibas - 2026.02.18 - 
+            Note:
+            they should be updated only when the player is walking to ensure that the last facing direction is maintained when the player stops moving, allowing for idle animations to face the correct direction. 
+
+            This fixes the animation bug where the player would snap back to the first animation in the blendtree when stopping movement.
+            */
+            animator.SetFloat("moveX", inputDir.x);
+            animator.SetFloat("moveZ", inputDir.z);
         }
-        
-        animator.SetFloat("moveX", inputDir.x);
-        animator.SetFloat("moveZ", inputDir.z);
 
         animator.SetFloat("lastMoveX", lastFacingDirection.x);
         animator.SetFloat("lastMoveZ", lastFacingDirection.y);
 
-        animator.SetBool("isWalking", inputDir.magnitude > 0.1f);
     }
 
     /// <summary>
