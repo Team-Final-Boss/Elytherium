@@ -11,6 +11,7 @@ public class config : MonoBehaviour
     {
         GameObject gm = GameObject.FindGameObjectWithTag("GameController");
         configScript = gm.GetComponent<ConfigScript>();
+        
     }
 
     // Update is called once per frame
@@ -40,6 +41,7 @@ public class config : MonoBehaviour
 
     public void saveChanges()
     {
+       
         configScript.SaveConfig();
         SceneManager.LoadScene(0);
     }

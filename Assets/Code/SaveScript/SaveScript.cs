@@ -11,33 +11,7 @@ public class SaveScript : MonoBehaviour
 
     private string savePath;
 
-    void Awake()
-    {
-        SaveScript[] managers = FindObjectsOfType<SaveScript>();
 
-        if (managers.Length > 1)
-        {
-            foreach (SaveScript other in managers)
-            {
-                if (other != this)
-                {
-                    // Se o outro tem mais saves, esse aqui morre
-                    if (other.timesaved > this.timesaved)
-                    {
-                        Destroy(gameObject);
-                        return;
-                    }
-                    // Se esse tem mais saves, o outro morre
-                    else
-                    {
-                        Destroy(other.gameObject);
-                    }
-                }
-            }
-        }
-
-        DontDestroyOnLoad(gameObject);
-    }
 
     void Start()
     {

@@ -36,43 +36,35 @@ public class MoveScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        Movimentacao();
-          corpo.AddForce(Vector3.down * dragForce, ForceMode.Acceleration);
+        setupInput();
+        corpo.AddForce(Vector3.down * dragForce, ForceMode.Acceleration);
     }
 
-    void Movimentacao()
+    void setupInput()
+    {
+        if (configScript.controls == 1)
+            Movimentacao(KeyCode.A, KeyCode.S, KeyCode.D, KeyCode.W);
+        else
+            Movimentacao(KeyCode.LeftArrow, KeyCode.DownArrow, KeyCode.RightArrow, KeyCode.UpArrow);
+    }
+
+    void Movimentacao(KeyCode left, KeyCode down, KeyCode right, KeyCode up)
     {
         float moveX = 0f;
         float moveZ = 0f;
-     
-     if (configScript.controls == 1)
-        {
-            if (Input.GetKey(KeyCode.W))
-                moveZ = 1f;
 
-            if (Input.GetKey(KeyCode.S))
-                moveZ = -1f;
 
-            if (Input.GetKey(KeyCode.A))
-                moveX = -1f;
-
-            if (Input.GetKey(KeyCode.D))
-                moveX = 1f;
-        }
-        else if (configScript.controls == 0)
-        {
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(up))
             moveZ = 1f;
 
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(down))
             moveZ = -1f;
 
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(left))
             moveX = -1f;
 
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(right))
             moveX = 1f;
-        }
 
         Vector3 direcao = transform.forward * moveZ + transform.right * moveX;
         direcao.Normalize();
@@ -94,5 +86,6 @@ public class MoveScript : MonoBehaviour
         }
 
         corpo.linearVelocity = velocidadeAtual;
-    
-}}
+
+    }
+}

@@ -10,9 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6554192340121995843}
   - component: {fileID: 8496820721191703274}
+  - component: {fileID: 5262570477988970522}
+  - component: {fileID: 4967905512276503717}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -49,3 +51,32 @@ MonoBehaviour:
   Elytherium: 0
   moral: 50
   timesaved: 0
+--- !u!114 &5262570477988970522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5769504518528952181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f780f85d2b6b56449f4e500e5712d18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ConfigScript
+  controls: 0
+  volume: 50
+  brightness: 50
+  language: 0
+  timesaved: 0
+--- !u!114 &4967905512276503717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5769504518528952181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ad9295c7c1a21a4fbc4f9e4d5271258, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager

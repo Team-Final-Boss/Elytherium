@@ -10,63 +10,55 @@ public class PlayerAttack : MonoBehaviour
     public float time = timeToAttack;
 
     private ConfigScript configScript;
-        
 
 
 
-    void changeArmaPos()
+    private Vector3 leftPos = new Vector3(-0.78999263f, -0.172436416f, -0.0415452421f);
+    private Vector3 downPos = new Vector3(-0.0299999993f, -0.172436416f, -1.32000005f);
+    private Vector3 rightPos = new Vector3(0.785000026f, -0.172436416f, -0.0415452421f);
+    private Vector3 upPos = new Vector3(-0.0299999993f, -0.172436416f, 1.38999999f);
+
+    void ChangeArmaPos()
     {
-    
-    if(configScript.controls == 1)
-        {
-            if (Input.GetKeyDown(KeyCode.A) || Input.GetKey(KeyCode.A) && !Input.GetKeyDown(KeyCode.S) && !Input.GetKeyDown(KeyCode.W))
-            {
-                transformArma.localPosition = new Vector3(-0.7f,0f,0f);
-            }
-
-            else if (Input.GetKeyDown(KeyCode.S) || Input.GetKey(KeyCode.S))
-            {
-                transformArma.localPosition = new Vector3(0f,0f,0f);
-            }
-
-            else if (Input.GetKeyDown(KeyCode.D) || Input.GetKey(KeyCode.D))
-            {
-                transformArma.localPosition = new Vector3(0.7f,0f,0f);
-            }
-
-            else if (Input.GetKeyDown(KeyCode.W) || Input.GetKey(KeyCode.W) && !Input.GetKeyDown(KeyCode.A) && !Input.GetKeyDown(KeyCode.S) && !Input.GetKeyDown(KeyCode.D))
-            {
-                transformArma.localPosition = new Vector3(0f,0f,0f);
-            }
-        }
-        else if(configScript.controls == 0)
-            {
-        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKey(KeyCode.LeftArrow) && !Input.GetKeyDown(KeyCode.DownArrow) && !Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            transformArma.localPosition = new Vector3(-0.7f,0f,0f);
-        }
-
-        else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKey(KeyCode.DownArrow))
-        {
-            transformArma.localPosition = new Vector3(0f,0f,0f);
-        }
-
-        else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKey(KeyCode.RightArrow))
-        {
-            transformArma.localPosition = new Vector3(0.7f,0f,0f);
-        }
-
-        else if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKey(KeyCode.UpArrow) && !Input.GetKeyDown(KeyCode.LeftArrow) && !Input.GetKeyDown(KeyCode.DownArrow) && !Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            transformArma.localPosition = new Vector3(0f,0f,0f);
-        }}
+        if (configScript.controls == 1)
+            HandleInput(KeyCode.A, KeyCode.S, KeyCode.D, KeyCode.W);
+        else
+            HandleInput(KeyCode.LeftArrow, KeyCode.DownArrow, KeyCode.RightArrow, KeyCode.UpArrow);
     }
+
+    void HandleInput(KeyCode left, KeyCode down, KeyCode right, KeyCode up)
+    {
+        if (IsPressed(left) && !IsPressed(down) && !IsPressed(up))
+        {
+            transformArma.localPosition = leftPos;
+        }
+        else if (IsPressed(down))
+        {
+            transformArma.localPosition = downPos;
+        }
+        else if (IsPressed(right))
+        {
+            transformArma.localPosition = rightPos;
+        }
+        else if (IsPressed(up))
+        {
+            transformArma.localPosition = upPos;
+        }
+    }
+
+    bool IsPressed(KeyCode key)
+    {
+        return Input.GetKeyDown(key) || Input.GetKey(key);
+    }
+
+
     void UpdateTime()
     {
-        if (playerArmaCollider.enabled == true){
+        if (playerArmaCollider.enabled == true)
+        {
             time = time - Time.deltaTime;
         }
-        
+
         if (time <= 0)
         {
             playerArmaCollider.enabled = false;
@@ -88,7 +80,7 @@ public class PlayerAttack : MonoBehaviour
     {
         Attack();
         UpdateTime();
-        changeArmaPos();
+        ChangeArmaPos();
     }
 
     void Attack()
@@ -99,6 +91,6 @@ public class PlayerAttack : MonoBehaviour
             Debug.Log(time);
             Debug.Log(playerArmaCollider.enabled);
         }
-        
+
     }
 }

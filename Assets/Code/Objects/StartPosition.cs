@@ -32,7 +32,7 @@ public class StartPosition : MonoBehaviour
             player.position = positionStart;
             playerTeleported = true;
         }
-        else if(saveScript.missionComplete != 3)
+        else if(saveScript.missionComplete == 3)
         {
             playerTeleported = true;
         }

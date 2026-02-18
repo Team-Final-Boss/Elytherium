@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be3600c14d8f5fa409368fc659f87628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MovimentoFP
-  velocidade: 10
+  velocidade: 15
   distanciaChao: 1.5
   dragForce: 50
 --- !u!114 &5320965281259975485
