@@ -1,12 +1,15 @@
+using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody))]
 public class MoveScript : MonoBehaviour
 {
     public float velocidade = 6f;
     public float distanciaChao = 1.5f;
-    public TextMeshProUGUI DashStamina;
+    public Image DashStamina;
+    public Image FundoBarra;
 
     private ConfigScript configScript;
 
@@ -18,6 +21,8 @@ public class MoveScript : MonoBehaviour
 
     private float moveX = 0f;
     private float moveZ = 0f;
+
+    private bool barraDashAparece = false;
     private float tempoDash = -3f;
     void Start()
     {
@@ -30,7 +35,7 @@ public class MoveScript : MonoBehaviour
         GameObject gm = GameObject.FindGameObjectWithTag("GameController");
         configScript = gm.GetComponent<ConfigScript>();
 
-        DashStamina.text = "0";
+        DashStamina.fillAmount = 0f;
     }
 
     void Update()
@@ -87,12 +92,33 @@ public class MoveScript : MonoBehaviour
         }
        
         tempoDash -= Time.deltaTime;
-        DashStamina.text = tempoDash.ToString();
+        DashStamina.fillAmount = Mathf.Clamp(tempoDash / 3 * -1, 0f, 1f);
+
+        if(tempoDash < -4.5f)
+        {
+            Color cor1 = DashStamina.color;
+            cor1.a = Mathf.MoveTowards(cor1.a, 0f, 1f * Time.deltaTime);
+            DashStamina.color = cor1;
+
+            Color cor2 = FundoBarra.color;
+            cor2.a = 0f;
+            FundoBarra.color = cor2;
+        }
 
         if (Input.GetKey(KeyCode.Space) && tempoDash < -2.9f)
         {
             velocidade = 40f;
             tempoDash = 0.15f;
+            DashStamina.fillAmount = 0f;
+
+            Color cor2 = DashStamina.color;
+            cor2.a = 1f;  // totalmente visível
+            DashStamina.color = cor2;
+
+            cor2 = FundoBarra.color;
+            cor2.a = 1f;  // totalmente visível
+            FundoBarra.color = cor2;
+
         }
 
         Vector3 direcao = transform.forward * moveZ + transform.right * moveX;
