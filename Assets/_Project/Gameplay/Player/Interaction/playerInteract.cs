@@ -2,10 +2,6 @@ using UnityEngine;
 
 public class playerInteract : MonoBehaviour
 {
-
-
-
-
     public Transform transformInteract;
     private ConfigScript configScript;
 
