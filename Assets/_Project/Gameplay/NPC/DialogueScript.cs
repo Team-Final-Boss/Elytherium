@@ -7,9 +7,6 @@ public class dialogueScript : MonoBehaviour
    public MoveScript moveScript;
 
    public GameObject interactArea;
-
-  
-
     public TMPro.TextMeshProUGUI textInteract;
     void Start()
     {

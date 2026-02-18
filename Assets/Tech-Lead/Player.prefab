@@ -229,8 +229,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be3600c14d8f5fa409368fc659f87628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MovimentoFP
-  velocity: 6
-  gravitationalForce: 3
+  velocity: 25
+  gravitationalForce: 9.81
   groundCheckDistance: 0.2
   groundLayer:
     serializedVersion: 2
