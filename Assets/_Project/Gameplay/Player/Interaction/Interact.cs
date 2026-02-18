@@ -30,7 +30,7 @@ public class interact : MonoBehaviour
         if (currentObject != null && Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log("Interagiu");
-            currentObject.interacttree();
+            currentObject.interactTree();
         }
     }
 }

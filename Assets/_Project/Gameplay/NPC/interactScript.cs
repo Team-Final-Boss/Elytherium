@@ -5,7 +5,6 @@ public class interactScript : MonoBehaviour
 {
     public int id = 0;
 
-
     private SaveScript saveScript;
 
     public GameObject alert;
@@ -32,9 +31,7 @@ public class interactScript : MonoBehaviour
     }
 }
 
-
-
-    public void interacttree()
+    public void interactTree()
     {
         switch (id)
         {
