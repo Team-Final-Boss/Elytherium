@@ -37,10 +37,17 @@ public class Attack : MonoBehaviour
     /// </param>
     void OnTriggerEnter(Collider other)
     {
-        Damaged damaged = other.GetComponent<Damaged>();
-        if (damaged != null)
+        if (other.CompareTag("Damaged"))
         {
-            damaged.TakeDamage(1);
+            Damaged damaged = other.GetComponent<Damaged>();
+            if (damaged != null)
+            {
+                damaged.TakeDamage(1);
+            }
         }
-    }
+        if (other.CompareTag("Destructible"))
+        {
+            Destroy(other.gameObject);
+        }
+}
 }

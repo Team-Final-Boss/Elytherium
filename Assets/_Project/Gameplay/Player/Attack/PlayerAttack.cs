@@ -53,13 +53,12 @@ public class PlayerAttack : MonoBehaviour
 
     void Attack()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             playerArmaCollider.enabled = true;
             Debug.Log(time);
             Debug.Log(playerArmaCollider.enabled);
         }
-
     }
 
     #endregion
