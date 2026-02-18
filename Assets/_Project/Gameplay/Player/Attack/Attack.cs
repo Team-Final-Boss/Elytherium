@@ -1,26 +1,31 @@
 using UnityEngine;
 
-/// <summary>
-/// 
-/// </summary>
-/// 
-/// <remarks>
-/// 
-/// </remarks>
 public class Attack : MonoBehaviour
 {
-    void OnTriggerEnter(Collider other) {
-        if (other.gameObject.tag == "Destructible")
+    private Collider attackCollider;
+
+    void Awake()
+    {
+        attackCollider = GetComponent<Collider>();
+        attackCollider.enabled = false;
+    }
+
+    public void EnableHitbox()
+    {
+        attackCollider.enabled = true;
+    }
+
+    public void DisableHitbox()
+    {
+        attackCollider.enabled = false;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        Damaged damaged = other.GetComponent<Damaged>();
+        if (damaged != null)
         {
-            Destroy(other.gameObject);
-        }
-        if(other.gameObject.tag == "Damaged")
-        {
-            Damaged damaged = other.gameObject.GetComponent<Damaged>();
-            if (damaged != null)
-            {
-                damaged.TakeDamage(1);
-            }
+            damaged.TakeDamage(1);
         }
     }
 }

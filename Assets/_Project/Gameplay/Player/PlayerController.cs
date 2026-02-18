@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 inputDir;
 
     private bool canMove = true;
+
+    private bool isAttacking;
     void Awake()
     {
         moveScript = GetComponent<MoveScript>();
@@ -19,10 +21,14 @@ public class PlayerController : MonoBehaviour
         inputDir = ReadInput();
 
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !isAttacking)
         {
+            isAttacking = true;
+            canMove = false;
             playerAnimationController.TriggerAttack();
         }
+
+        
 
         if (!canMove)
         {
@@ -32,6 +38,17 @@ public class PlayerController : MonoBehaviour
         moveScript.SetDirection(inputDir);
         playerAnimationController.SetMovement(inputDir);
 
+    }
+
+    public void EnableMovement()
+    {
+        canMove = true;
+        isAttacking = false;
+    }
+
+    public void DisableMovement()
+    {
+        canMove = false;
     }
 
     Vector3 ReadInput()
@@ -46,4 +63,10 @@ public class PlayerController : MonoBehaviour
 
         return dir;
     }
+
+    public void OnAttackFinished()
+    {
+        canMove = true;
+        isAttacking = false;
+}
 }

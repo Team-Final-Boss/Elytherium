@@ -4,6 +4,10 @@ public class PlayerAnimationController : MonoBehaviour {
     private Animator animator;
     private SpriteRenderer spriteRenderer;
 
+    private PlayerController playerController;
+
+    private Attack attack;
+
     
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -12,6 +16,13 @@ public class PlayerAnimationController : MonoBehaviour {
     {
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        playerController = GetComponentInParent<PlayerController>();
+        attack = GetComponentInChildren<Attack>();
+
+        if (attack == null)
+        {
+            Debug.LogError("Attack component not found in children.");
+        }
     }
 
     public void SetMovement(Vector3 inputDir)
@@ -25,6 +36,22 @@ public class PlayerAnimationController : MonoBehaviour {
     public void TriggerAttack()
     {
         animator.SetTrigger("attack");
+    }
+
+    public void EnableHitbox()
+    {
+        attack.EnableHitbox();
+    }
+
+    public void DisableHitbox()
+    {
+        attack.DisableHitbox();
+    }
+
+    public void OnAttackFinished()
+    {
+        animator.ResetTrigger("attack");
+        playerController.EnableMovement();
     }
 
     public void TriggerDash()
