@@ -5,6 +5,10 @@ public class River : MonoBehaviour
 
     public Transform river;
 
+    public GameObject teleporter;
+
+
+
     public int rocksReceived = 0;
 
     public Vector3 position2;
@@ -33,7 +37,8 @@ public class River : MonoBehaviour
     {
         if (rocksReceived == 5)
         {
-            river.position = position2;
+            river.localPosition = position2;
+            teleporter.SetActive(true);
         }
     }
 }

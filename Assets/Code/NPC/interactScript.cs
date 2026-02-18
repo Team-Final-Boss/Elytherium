@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 public class interactScript : MonoBehaviour
 {
     public int id = 0;
+
+
     private SaveScript saveScript;
 
     public GameObject alert;
@@ -25,7 +27,7 @@ public class interactScript : MonoBehaviour
         switch (id)
         {
             case 0:
-                saveScript.saveLocation = 1;
+                saveScript.saveLocation = SceneManager.GetActiveScene().buildIndex;
                 saveScript.timesaved += 1;
                 saveScript.SaveGame();
                 break;
@@ -49,6 +51,10 @@ public class interactScript : MonoBehaviour
             if(saveScript.missionComplete == 2){
             saveScript.missionComplete = 3;}
             alert.SetActive(true);
+            break;
+            case 6:
+            teleporter teleport = GetComponent<teleporter>();
+            teleport.teleport();
             break;
             default:
                 Debug.Log("interact with nothing");

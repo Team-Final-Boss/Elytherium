@@ -9,12 +9,50 @@ public class Transition : MonoBehaviour
     public GameObject destructable;
     public GameObject rocks;
 
+    public GameObject otherGameObject;
+
+    
+
     public float fadeDuration = 1f;
 
     public void Blackscreen()
     {
         StartCoroutine(TransitionRoutine());
     }
+
+    public void StartTeleport(Vector3 positionTeleport)
+{
+    StartCoroutine(Teleport(positionTeleport));
+}
+
+public void StartTeleportOther(Vector3 positionTeleport)
+{
+    StartCoroutine(TeleportOther(positionTeleport));
+}
+
+IEnumerator Teleport(Vector3 positionTeleport)
+{
+    // Fade In (tela preta)
+    yield return StartCoroutine(Fade(0f, 1f));
+
+    Transform player = GameObject.FindGameObjectWithTag("Player").transform;
+    player.position = positionTeleport;
+
+    // Fade Out
+    yield return StartCoroutine(Fade(1f, 0f));
+}
+
+IEnumerator TeleportOther(Vector3 positionTeleport)
+{
+    // Fade In (tela preta)
+    yield return StartCoroutine(Fade(0f, 1f));
+
+    Transform other = otherGameObject.transform;
+    other.position = positionTeleport;
+
+    // Fade Out
+    yield return StartCoroutine(Fade(1f, 0f));
+}
 
     IEnumerator TransitionRoutine()
     {
