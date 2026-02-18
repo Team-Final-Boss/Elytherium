@@ -1881,7 +1881,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::dialogueID2Pt2
   blackscreen: {fileID: 964341532}
-  positionTeleportOther: {x: 111.34, y: 19.86, z: 79.48}
+  positionTeleportOther: {x: 111.34, y: 20.5, z: 79.48}
   dialogueScript: {fileID: 1392954044}
 --- !u!1 &767038556
 GameObject:
@@ -4667,7 +4667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StartPosition
   missionNecessary: 4
-  positionStart: {x: 119.83, y: 18.83, z: 91.77}
+  positionStart: {x: 119.83, y: 19.5, z: 91.77}
 --- !u!1 &1796868242
 GameObject:
   m_ObjectHideFlags: 0

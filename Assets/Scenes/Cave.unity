@@ -1676,8 +1676,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::dialogueScript
   dialogueBox: {fileID: 1490572708}
+  moveScript: {fileID: 0}
   interactArea: {fileID: 1420266193}
-  text: {fileID: 1328242206}
+  textInteract: {fileID: 0}
 --- !u!1 &343399572
 GameObject:
   m_ObjectHideFlags: 0
@@ -2599,6 +2600,10 @@ PrefabInstance:
     - target: {fileID: 4083501151425157549, guid: cb8c59a0dcebb7a4d9d541c4b8eb5308, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 41.608
+      objectReference: {fileID: 0}
+    - target: {fileID: 4767400413853537203, guid: cb8c59a0dcebb7a4d9d541c4b8eb5308, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5691,26 +5696,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 289011954255038, guid: fe73eb409f687424d877dffd990e9dc0, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 289011954255038, guid: fe73eb409f687424d877dffd990e9dc0, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 1104340846818027014, guid: fe73eb409f687424d877dffd990e9dc0, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 2667884259997667827, guid: fe73eb409f687424d877dffd990e9dc0, type: 3}
       propertyPath: text
       value: 
       objectReference: {fileID: 1328242206}
-    - target: {fileID: 3874128210098741820, guid: fe73eb409f687424d877dffd990e9dc0, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1762702292}
     - target: {fileID: 4657781780826065351, guid: fe73eb409f687424d877dffd990e9dc0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.89
@@ -5749,22 +5738,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4657781780826065351, guid: fe73eb409f687424d877dffd990e9dc0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8316263390748659813, guid: fe73eb409f687424d877dffd990e9dc0, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -12.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8316263390748659813, guid: fe73eb409f687424d877dffd990e9dc0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8348477865225717781, guid: fe73eb409f687424d877dffd990e9dc0, type: 3}
-      propertyPath: m_Convex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8348477865225717781, guid: fe73eb409f687424d877dffd990e9dc0, type: 3}
-      propertyPath: m_ProvidesContacts
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -7654,6 +7627,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::dialogueManager
   dialogoAtual: 1
   Dialogue: {fileID: 290733401}
+  NotpressToPass: 0
+  totalDialogos: 3
 --- !u!114 &1490572713
 MonoBehaviour:
   m_ObjectHideFlags: 0
