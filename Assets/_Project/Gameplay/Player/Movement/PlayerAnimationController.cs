@@ -9,6 +9,7 @@ public class PlayerAnimationController : MonoBehaviour {
     private SpriteRenderer spriteRenderer;
     private PlayerController playerController;
     private Attack attack;
+    private Vector2 lastFacingDirection = new Vector2(0f, -1f);
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -50,8 +51,19 @@ public class PlayerAnimationController : MonoBehaviour {
     public void SetMovement(Vector3 inputDir)
     {
         if (inputDir.x != 0) spriteRenderer.flipX = inputDir.x < 0;
+        
+        if (inputDir.magnitude > 0.1f)
+        {
+            lastFacingDirection.x = inputDir.x;
+            lastFacingDirection.y = inputDir.z;
+        }
+        
         animator.SetFloat("moveX", inputDir.x);
         animator.SetFloat("moveZ", inputDir.z);
+
+        animator.SetFloat("lastMoveX", lastFacingDirection.x);
+        animator.SetFloat("lastMoveZ", lastFacingDirection.y);
+
         animator.SetBool("isWalking", inputDir.magnitude > 0.1f);
     }
 
