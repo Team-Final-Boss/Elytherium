@@ -96,8 +96,8 @@ public class PlayerAnimationController : MonoBehaviour {
     /// </summary>
     public void OnAttackFinished()
     {
-        animator.ResetTrigger("attack"); // must reset trigger to prevent animation from looping between in attack state and idle/walk state
         playerController.EnableMovement();
+        animator.ResetTrigger("attack"); // must reset trigger to prevent animation from looping between in attack state and idle/walk state
     }
 
     #endregion
