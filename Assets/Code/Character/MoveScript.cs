@@ -23,7 +23,11 @@ public class MoveScript : MonoBehaviour
     private float moveZ = 0f;
 
     private bool barraDashAparece = false;
-    private float tempoDash = -3f;
+    private float cronometroDash = -3f;
+    private float tempoDash = 0.15f;
+    private float intervaloDash = 3f;
+    private float velocidadeDash = 40f;
+
     void Start()
     {
         corpo = GetComponent<Rigidbody>();
@@ -54,7 +58,7 @@ public class MoveScript : MonoBehaviour
 
     void Movimentacao()
     {
-        if (tempoDash <= 0f)
+        if (cronometroDash <= 0f)
         {
             velocidade = 6f;
             moveX = 0f;
@@ -90,35 +94,22 @@ public class MoveScript : MonoBehaviour
                     moveX = 1f;
             }
         }
-       
-        tempoDash -= Time.deltaTime;
-        DashStamina.fillAmount = Mathf.Clamp(tempoDash / 3 * -1, 0f, 1f);
 
-        if(tempoDash < -4.5f)
+        if (Input.GetKey(KeyCode.Space) && cronometroDash < intervaloDash * -1)
         {
-            Color cor1 = DashStamina.color;
-            cor1.a = Mathf.MoveTowards(cor1.a, 0f, 1f * Time.deltaTime);
-            DashStamina.color = cor1;
-
-            Color cor2 = FundoBarra.color;
-            cor2.a = 0f;
-            FundoBarra.color = cor2;
-        }
-
-        if (Input.GetKey(KeyCode.Space) && tempoDash < -2.9f)
-        {
-            velocidade = 40f;
-            tempoDash = 0.15f;
+            velocidade = velocidadeDash;
+            cronometroDash = tempoDash;
             DashStamina.fillAmount = 0f;
 
-            Color cor2 = DashStamina.color;
-            cor2.a = 1f;  // totalmente visível
-            DashStamina.color = cor2;
+            AdicionarBarraStamina();
+        }
 
-            cor2 = FundoBarra.color;
-            cor2.a = 1f;  // totalmente visível
-            FundoBarra.color = cor2;
+        cronometroDash -= Time.deltaTime;
+        DashStamina.fillAmount = Mathf.Clamp(cronometroDash / 3 * -1, 0f, 1f);
 
+        if(cronometroDash < intervaloDash * -1 - 1.5f)
+        {
+            RemoverBarraStamina();
         }
 
         Vector3 direcao = transform.forward * moveZ + transform.right * moveX;
@@ -142,5 +133,27 @@ public class MoveScript : MonoBehaviour
 
         corpo.linearVelocity = velocidadeAtual;
 
+    }
+
+    void RemoverBarraStamina()
+    {
+        Color cor1 = DashStamina.color;
+        cor1.a = Mathf.MoveTowards(cor1.a, 0f, 1f * Time.deltaTime);
+        DashStamina.color = cor1;
+
+        Color cor2 = FundoBarra.color;
+        cor2.a = 0f;
+        FundoBarra.color = cor2;
+    }
+
+    void AdicionarBarraStamina()
+    {
+        Color cor2 = DashStamina.color;
+        cor2.a = 1f;
+        DashStamina.color = cor2;
+
+        cor2 = FundoBarra.color;
+        cor2.a = 1f;
+        FundoBarra.color = cor2;
     }
 }
