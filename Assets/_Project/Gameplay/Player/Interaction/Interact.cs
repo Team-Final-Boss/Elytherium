@@ -3,8 +3,7 @@ using TMPro;
 
 public class interact : MonoBehaviour
 {
-    private interactScript objetoAtual;
-
+    private interactScript currentObject;
 
     public TMPro.TextMeshProUGUI text;
 
@@ -13,7 +12,7 @@ public class interact : MonoBehaviour
         if (other.CompareTag("Interactable"))
         {
             text.text = "Pressione E para interagir";
-            objetoAtual = other.GetComponent<interactScript>();
+            currentObject = other.GetComponent<interactScript>();
         }
     }
 
@@ -22,16 +21,16 @@ public class interact : MonoBehaviour
         if (other.CompareTag("Interactable"))
         {
             text.text = "";
-            objetoAtual = null;
+            currentObject = null;
         }
     }
 
     void Update()
     {
-        if (objetoAtual != null && Input.GetKeyDown(KeyCode.E))
+        if (currentObject != null && Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log("Interagiu");
-            objetoAtual.interacttree();
+            currentObject.interacttree();
         }
     }
 }

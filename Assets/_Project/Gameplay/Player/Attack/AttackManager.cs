@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class AttackManager : MonoBehaviour
 {
-
      private SaveScript saveScript;
      public PlayerAttack weapon;
     // Start is called once before the first execution of Update after the MonoBehaviour is created

@@ -493,6 +493,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7029948723529949830, guid: 95fa763085acbf84d937edb9703ec95c, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 95fa763085acbf84d937edb9703ec95c, type: 3}
       propertyPath: m_Name
       value: "CENA1 ALTERA\xC7\xC3O2"
@@ -1573,14 +1577,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1183808389366629385, guid: fe73eb409f687424d877dffd990e9dc0, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1183808389366629385, guid: fe73eb409f687424d877dffd990e9dc0, type: 3}
-      propertyPath: m_FlipY
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2667884259997667827, guid: fe73eb409f687424d877dffd990e9dc0, type: 3}
       propertyPath: text
       value: 
@@ -1625,28 +1621,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6577764868474152514, guid: fe73eb409f687424d877dffd990e9dc0, type: 3}
-      propertyPath: m_Enabled
-      value: 0
+    - target: {fileID: 7004816377755428640, guid: fe73eb409f687424d877dffd990e9dc0, type: 3}
+      propertyPath: velocity
+      value: 20
       objectReference: {fileID: 0}
-    - target: {fileID: 7813334641887147331, guid: fe73eb409f687424d877dffd990e9dc0, type: 3}
-      propertyPath: m_Enabled
-      value: 0
+    - target: {fileID: 7004816377755428640, guid: fe73eb409f687424d877dffd990e9dc0, type: 3}
+      propertyPath: gravitationalForce
+      value: 9.81
       objectReference: {fileID: 0}
-    - target: {fileID: 8284056441039404207, guid: fe73eb409f687424d877dffd990e9dc0, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: c43e1da2abbcb9a4085b69a18f3dd90d, type: 2}
-    - target: {fileID: 8284056441039404207, guid: fe73eb409f687424d877dffd990e9dc0, type: 3}
-      propertyPath: m_AnimatePhysics
-      value: 0
+    - target: {fileID: 7004816377755428640, guid: fe73eb409f687424d877dffd990e9dc0, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 8284056441039404207, guid: fe73eb409f687424d877dffd990e9dc0, type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 763113620633150427, guid: fe73eb409f687424d877dffd990e9dc0, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

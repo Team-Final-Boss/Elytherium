@@ -1,5 +1,12 @@
 using UnityEngine;
 
+/// <summary>
+/// 
+/// </summary>
+/// 
+/// <remarks>
+/// 
+/// </remarks>
 public class Attack : MonoBehaviour
 {
     void OnTriggerEnter(Collider other) {

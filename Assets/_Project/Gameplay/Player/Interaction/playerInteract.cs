@@ -7,11 +7,7 @@ public class playerInteract : MonoBehaviour
 
 
     public Transform transformInteract;
-
     private ConfigScript configScript;
-
-
-
 
     private Vector3 leftPos = new Vector3(-0.78999263f, -0.172436416f, -0.0415452421f);
     private Vector3 downPos = new Vector3(-0.0299999993f, -0.172436416f, -1.32000005f);
