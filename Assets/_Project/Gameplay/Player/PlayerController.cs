@@ -8,13 +8,19 @@ using UnityEngine;
 ///     This script should be attached to the player GameObject, which must also have a MoveScript component. The PlayerAnimationController should be a child of the player GameObject and contain an Attack component for handling attack hitboxes.
 /// </remarks>
 /// 
+/// 
+[RequireComponent(typeof(MoveScript))]
 public class PlayerController : MonoBehaviour
 {
     private MoveScript moveScript;
     private PlayerAnimationController playerAnimationController;
+
     private Vector3 inputDir;
     private bool canMove = true;
     private bool isAttacking;
+
+    private bool isAttackUnlocked = false;
+
 
     #region Unity Methods
     /// <summary>
@@ -25,23 +31,26 @@ public class PlayerController : MonoBehaviour
         moveScript = GetComponent<MoveScript>();
         playerAnimationController = GetComponentInChildren<PlayerAnimationController>();
     }
-
     /// <summary>
     ///   ///     Update is called once per frame.
     /// </summary>
     void Update()
     {
+
+        Debug.Log("<color=green>Lendo Input...</color>"); 
+
         inputDir = ReadInput();
 
-
-        if (Input.GetKeyDown(KeyCode.Space) && !isAttacking)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            isAttacking = true;
-            canMove = false;
-            playerAnimationController.TriggerAttack();
+            Debug.Log($"[DEBUG] Espaço pressionado. isAttacking: {isAttacking} | isAttackUnlocked: {isAttackUnlocked}");
         }
 
-        
+        if (Input.GetKeyDown(KeyCode.Space) && !isAttacking && isAttackUnlocked)
+        {
+            Debug.Log("[DEBUG] Passou pela trava! Disparando trigger de ataque...");
+            InitiateAttack();
+        }
 
         if (!canMove)
         {
@@ -52,6 +61,21 @@ public class PlayerController : MonoBehaviour
         playerAnimationController.SetMovement(inputDir);
 
     }
+
+    void OnEnable() {
+        if (playerAnimationController != null)
+        {
+            playerAnimationController.OnAttackAnimationCompleted += OnAttackEnded;
+        }
+    }
+
+    void OnDisable() {
+        if (playerAnimationController != null)
+        {
+            playerAnimationController.OnAttackAnimationCompleted -= OnAttackEnded;
+        }
+    }
+
 
     #endregion
 
@@ -70,11 +94,32 @@ public class PlayerController : MonoBehaviour
 
         Vector3 dir = new Vector3(moveX, 0f, moveZ);
 
-        if (dir.magnitude > 1f)
+        if (dir.sqrMagnitude > 1f) // maagnitude is expensive to compute, so we use sqrMagnitude for comparison
             dir.Normalize();
 
         return dir;
     }
+
+    #region Attack Control Methods
+
+    private void InitiateAttack()
+    {
+        isAttacking = true;
+        canMove = false;
+        playerAnimationController.TriggerAttack();
+    }
+
+    private void OnAttackEnded()
+    {
+        EnableMovement();
+    }
+
+    public void SetAttackUnlocked(bool state)
+    {
+        isAttackUnlocked = state; 
+    }
+
+    #endregion
 
 
 
