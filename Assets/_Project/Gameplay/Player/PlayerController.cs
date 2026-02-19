@@ -82,12 +82,12 @@ public class PlayerController : MonoBehaviour
         switch (controlType)
         {
             case 0:
-                inputActions.Player.bindingMask =
+                inputActions.bindingMask =
                     InputBinding.MaskByGroup("Arrows");
                 break;
 
             case 1:
-                inputActions.Player.bindingMask =
+                inputActions.bindingMask =
                     InputBinding.MaskByGroup("WASD");
                 break;
         }
