@@ -1889,6 +1889,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7759695937919445830, guid: fe73eb409f687424d877dffd990e9dc0, type: 3}
+      propertyPath: m_CameraType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7823841812373883486, guid: fe73eb409f687424d877dffd990e9dc0, type: 3}
+      propertyPath: m_ClearFlags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7823841812373883486, guid: fe73eb409f687424d877dffd990e9dc0, type: 3}
+      propertyPath: orthographic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8316263390748659813, guid: fe73eb409f687424d877dffd990e9dc0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.63
@@ -1899,7 +1911,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8316263390748659813, guid: fe73eb409f687424d877dffd990e9dc0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.77
+      value: 2.23
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7273,6 +7285,7 @@ GameObject:
   - component: {fileID: 3859455277340262804}
   - component: {fileID: 8574415055370997389}
   - component: {fileID: 3416438205121177474}
+  - component: {fileID: 8574415055370997390}
   m_Layer: 0
   m_Name: Plane.027
   m_TagString: Untagged
@@ -7455,7 +7468,7 @@ GameObject:
   - component: {fileID: 1382458008445236127}
   - component: {fileID: 3193358536428110363}
   m_Layer: 0
-  m_Name: Plane.006
+  m_Name: Bridge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10819,6 +10832,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3249381265767573318}
   m_Mesh: {fileID: 4723010164368009254, guid: 4d8d3aa6fcad8ff4da92a8eadda4e56e, type: 3}
+--- !u!65 &8574415055370997390
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3249381265767573318}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.027550653, y: 0.026300631, z: 0.29907817}
+  m_Center: {x: 0.00070925645, y: 0.00048938976, z: 0.15209115}
 --- !u!1 &8698569511565320992
 GameObject:
   m_ObjectHideFlags: 0

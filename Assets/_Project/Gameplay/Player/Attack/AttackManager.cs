@@ -18,9 +18,12 @@ public class AttackManager : MonoBehaviour
         }
 
         UpdateWeaponState();
-        Debug.Log("[UpdateWeaponState] Verificando estado da arma.");
     }
-    
+
+    public void Update()
+    {
+        UpdateWeaponState();
+    }
     // for some reason isnt working
     public void UpdateWeaponState()
     {
@@ -29,10 +32,8 @@ public class AttackManager : MonoBehaviour
             Debug.LogError("[AttackManager] SaveScript ou PlayerController não encontrado. Verifique as referências no inspector!", this);
             return;
         }
-        
-        Debug.Log($"[UpdateWeaponState] Chamando SetAttackUnlocked com: {saveScript.missionComplete >= 0}");
-
-        bool isWeaponUnlocked = saveScript.missionComplete >= 0;
+      
+        bool isWeaponUnlocked = saveScript.missionComplete >= 2;
         playerController.SetAttackUnlocked(isWeaponUnlocked); 
     }
 }
