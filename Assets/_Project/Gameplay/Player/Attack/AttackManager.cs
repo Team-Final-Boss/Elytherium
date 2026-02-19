@@ -20,11 +20,12 @@ public class AttackManager : MonoBehaviour
         UpdateWeaponState();
     }
 
+// Added the function call to update, so it can detect when the value is changed in the scene.
     public void Update()
     {
         UpdateWeaponState();
     }
-    // for some reason isnt working
+    
     public void UpdateWeaponState()
     {
         if (saveScript == null || playerController == null) 
@@ -32,7 +33,7 @@ public class AttackManager : MonoBehaviour
             Debug.LogError("[AttackManager] SaveScript ou PlayerController não encontrado. Verifique as referências no inspector!", this);
             return;
         }
-      
+      // Changed the value from 0 to 2
         bool isWeaponUnlocked = saveScript.missionComplete >= 2;
         playerController.SetAttackUnlocked(isWeaponUnlocked); 
     }
