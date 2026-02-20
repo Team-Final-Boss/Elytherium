@@ -147,5 +147,10 @@ public class PlayerController : MonoBehaviour
         canMove = false;
     }
 
+    public void invertMovement()
+    {
+        canMove = !canMove;
+    }
+
     #endregion
 }

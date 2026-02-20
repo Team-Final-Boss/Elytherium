@@ -9,7 +9,7 @@ public class interactScript : MonoBehaviour
     private TMPro.TextMeshProUGUI text;
 
     private GameObject player;
-    private MoveScript moveScript;
+    private PlayerController moveScript;
 
     [SerializeField] private GameObject saveScreen;
     public GameObject alert;
@@ -51,11 +51,11 @@ public class interactScript : MonoBehaviour
                     saveScreen.SetActive(!saveScreen.activeSelf);
 
                     player = GameObject.FindGameObjectWithTag("Player");
-                    moveScript = player.GetComponent<MoveScript>();
+                    moveScript = player.GetComponent<PlayerController>();
 
                     if (moveScript != null)
                     {
-                        moveScript.enabled = !saveScreen.activeSelf;
+                        moveScript.invertMovement();
                     }
                     else
                     {
@@ -114,11 +114,11 @@ public class interactScript : MonoBehaviour
                 alert.SetActive(!alert.activeSelf);
 
                 player = GameObject.FindGameObjectWithTag("Player");
-                moveScript = player.GetComponent<MoveScript>();
+                moveScript = player.GetComponent<PlayerController>();
 
                 if (moveScript != null)
                 {
-                    moveScript.enabled = !moveScript.enabled;
+                    moveScript.invertMovement();
                 }
                 else
                 {
@@ -178,7 +178,7 @@ public class interactScript : MonoBehaviour
                 }
 
                 player = GameObject.FindGameObjectWithTag("Player");
-                moveScript = player?.GetComponent<MoveScript>();
+                moveScript = player?.GetComponent<PlayerController>();
 
                 if (moveScript != null)
                 {
@@ -189,7 +189,7 @@ public class interactScript : MonoBehaviour
                     if (text != null)
                         text.text = "";
 
-                    moveScript.enabled = !moveScript.enabled;
+                    moveScript.invertMovement();
                 }
                 else
                 {

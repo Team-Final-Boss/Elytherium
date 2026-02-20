@@ -5,14 +5,16 @@ public class pause : MonoBehaviour
 {
 
     public GameObject player;
+
+    private PlayerController movescript;
     public GameObject pauseMenu;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
- 
+
 
     // Update is called once per frame
     void Update()
@@ -25,13 +27,15 @@ public class pause : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) && pauseMenu.activeSelf == false)
         {
             Time.timeScale = 0f;
-            player.GetComponent<MoveScript>().enabled = false;
+            movescript = player.GetComponent<PlayerController>();
+            movescript.DisableMovement();
             pauseMenu.SetActive(true);
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && pauseMenu.activeSelf == true)
         {
             Time.timeScale = 1f;
-            player.GetComponent<MoveScript>().enabled = true;
+            movescript = player.GetComponent<PlayerController>();
+            movescript.EnableMovement();
             pauseMenu.SetActive(false);
         }
     }
@@ -39,7 +43,8 @@ public class pause : MonoBehaviour
     public void unpauseGame()
     {
         Time.timeScale = 1f;
-        player.GetComponent<MoveScript>().enabled = true;
+        movescript = player.GetComponent<PlayerController>();
+        movescript.EnableMovement();
         pauseMenu.SetActive(false);
     }
 
