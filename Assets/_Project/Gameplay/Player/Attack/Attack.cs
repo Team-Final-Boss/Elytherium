@@ -110,6 +110,20 @@ public class Attack : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
+        if (other.CompareTag("Charger"))
+        {
+            if (other.TryGetComponent(out Charged charged))
+            {
+                charged.TakeDamage(1);
+            }
+        }
+        if (other.CompareTag("Elytherium"))
+        {
+            if (other.TryGetComponent(out Elytherium elytherium))
+            {
+                elytherium.CollectElytherium();
+            }
+        }
     }   
 
     #endregion

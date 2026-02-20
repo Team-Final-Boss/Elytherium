@@ -11,6 +11,11 @@ TagManager:
   - Alert
   - Damaged
   - Rock
+  - Charger
+  - Elytherium
+  - SaveScreen
+  - Menu
+  - Alert2
   layers:
   - Default
   - TransparentFX
