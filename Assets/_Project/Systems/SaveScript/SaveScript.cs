@@ -8,9 +8,11 @@ public class SaveScript : MonoBehaviour
     public int Elytherium = 0;
     public int moral = 50;
     public int timesaved = 0;
+    public bool river = true;
+
+    public System.Collections.Generic.List<string> destroyedObjects = new System.Collections.Generic.List<string>();
 
     private string savePath;
-
 
 
     void Start()
@@ -27,6 +29,8 @@ public class SaveScript : MonoBehaviour
         data.Elytherium = Elytherium;
         data.moral = moral;
         data.timesaved = timesaved;
+        data.river = river;
+        data.destroyedObjects = destroyedObjects;
 
         string json = JsonUtility.ToJson(data, true);
         File.WriteAllText(savePath, json);
@@ -46,6 +50,9 @@ public class SaveScript : MonoBehaviour
             Elytherium = data.Elytherium;
             moral = data.moral;
             timesaved = data.timesaved;
+            river = data.river;
+            destroyedObjects = data.destroyedObjects;
+
 
             Debug.Log("Jogo carregado!");
         }

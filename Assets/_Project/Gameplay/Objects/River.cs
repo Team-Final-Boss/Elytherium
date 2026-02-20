@@ -7,6 +7,8 @@ public class River : MonoBehaviour
 
     public GameObject teleporter;
 
+    private SaveScript saveScript;
+
 
 
     public int rocksReceived = 0;
@@ -15,7 +17,19 @@ public class River : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        GameObject gm = GameObject.FindGameObjectWithTag("GameController");
+
+        if (gm == null)
+        {
+            Debug.LogError("GameController não encontrado na cena!");
+            return;
+        }
+        saveScript = gm.GetComponent<SaveScript>();
+
+        if (!saveScript.river)
+        {
+            river.localPosition = position2;
+        }
     }
 
     // Update is called once per frame
@@ -39,6 +53,7 @@ public class River : MonoBehaviour
         {
             river.localPosition = position2;
             teleporter.SetActive(true);
+            saveScript.river = false;
         }
     }
 }

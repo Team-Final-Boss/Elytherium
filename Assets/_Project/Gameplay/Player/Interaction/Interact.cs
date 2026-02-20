@@ -11,7 +11,8 @@ public class interact : MonoBehaviour
     {
         if (other.CompareTag("Interactable"))
         {
-            text.text = "Pressione E para interagir";
+            if(text != null){
+            text.text = "Pressione E para interagir";}
             currentObject = other.GetComponent<interactScript>();
         }
     }
@@ -20,7 +21,8 @@ public class interact : MonoBehaviour
     {
         if (other.CompareTag("Interactable"))
         {
-            text.text = "";
+            if(text != null){
+            text.text = "";}
             currentObject = null;
         }
     }

@@ -1,15 +1,13 @@
 using UnityEngine;
 
-public class dialogueID2Pt2 : MonoBehaviour
+public class dialogueID3Pt2 : MonoBehaviour
 {
 
-    public GameObject bridge;
 
-    public Transition blackscreen;
+
 
     private SaveScript saveScript;
 
-    public Vector3 positionTeleportOther = new Vector3(0, 0, 0);
     public dialogueManager dialogueScript;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,26 +16,23 @@ public class dialogueID2Pt2 : MonoBehaviour
         saveScript = gm.GetComponent<SaveScript>();
     }
 
-    public void youPass()
+    public void saveElytherium()
     {
-        saveScript.missionComplete = 4;
         dialogueScript.dialogoAtual += 1;
-        blackscreen.StartTeleport(positionTeleportOther);
+        saveScript.moral -= saveScript.Elytherium * 2;
+        saveScript.Elytherium = 0;
+        
         
         dialogueScript.passDialogue();
-        bridge.SetActive(false);
         gameObject.SetActive(false);
         
     }
 
-    public void otherPass()
+    public void notSave()
     {
-        saveScript.missionComplete = 4;
         dialogueScript.dialogoAtual += 1;
-        blackscreen.StartTeleportOther(positionTeleportOther);
         
         dialogueScript.passDialogue();
-        bridge.SetActive(false);
         gameObject.SetActive(false);
     }
     
