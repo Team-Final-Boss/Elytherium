@@ -5,7 +5,7 @@ public class savescreen : MonoBehaviour
 {
      private SaveScript saveScript;
 
-     private MoveScript movescript;
+     private PlayerController movescript;
 
      public TMPro.TMP_Text elytheriumText;
     
@@ -30,7 +30,7 @@ public class savescreen : MonoBehaviour
         return;
     }
 
-    movescript = player.GetComponent<MoveScript>();
+    movescript = player.GetComponent<PlayerController>();
 
     if (movescript == null)
     {
@@ -40,7 +40,7 @@ public class savescreen : MonoBehaviour
 
     public void CloseSaveScreen()
     {
-        movescript.enabled = true;
+        movescript.EnableMovement();
 
         gameObject.SetActive(false);
     }

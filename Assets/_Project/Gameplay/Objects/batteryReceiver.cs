@@ -12,7 +12,7 @@ public class batteryReceiver : MonoBehaviour
 
     public GameObject wall;
 
-    public MoveScript moveScript;
+    public PlayerController moveScript;
 
     public float time = 3f;
 
@@ -58,13 +58,13 @@ public class batteryReceiver : MonoBehaviour
             time -= Time.deltaTime;
             cutsceneCamera.SetActive(true);
             playerCamera.SetActive(false);
-            moveScript.enabled = false;
+            moveScript.DisableMovement();
             
             if(time <= 0)
             {
                 cutsceneCamera.SetActive(false);
                 playerCamera.SetActive(true);
-                moveScript.enabled = true;
+                moveScript.EnableMovement();
                 cutscenePlayed = true;
                
             }

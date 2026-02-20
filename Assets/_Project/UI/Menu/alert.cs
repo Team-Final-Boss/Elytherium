@@ -9,8 +9,8 @@ public class alert : MonoBehaviour
 
    
 
-    GameObject player;
-    MoveScript moveScript;
+    private GameObject player;
+    private PlayerController moveScript;
 
     void Start()
     {
@@ -30,7 +30,7 @@ public class alert : MonoBehaviour
         }
 
         player = GameObject.FindGameObjectWithTag("Player");
-        moveScript = player.GetComponent<MoveScript>();
+        moveScript = player.GetComponent<PlayerController>();
     }
     public void Confirm()
     {
@@ -38,7 +38,7 @@ public class alert : MonoBehaviour
     }
     public void Cancel()
     {
-        moveScript.enabled = true;
+        moveScript.EnableMovement();
 
         gameObject.SetActive(false);
     }
