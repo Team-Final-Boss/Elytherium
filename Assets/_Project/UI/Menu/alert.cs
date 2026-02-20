@@ -53,7 +53,7 @@ public class alert : MonoBehaviour
             saveScript.Elytherium -= 5;
             ChargedBattery chargedBattery = battery.GetComponent<ChargedBattery>();
             chargedBattery.isLoaded = true;
-            moveScript.enabled = true;
+            moveScript.EnableMovement();
             gameObject.SetActive(false);
         }}
         else
@@ -68,7 +68,7 @@ public class alert : MonoBehaviour
 
         saveScript.missionComplete = 8;
         saveScript.moral += 10;
-        moveScript.enabled = true;
+        moveScript.EnableMovement();
 
         gameObject.SetActive(false);
     }
