@@ -1109,6 +1109,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: c9c5e04c30131e147ba0d8fe0f6698d4, type: 2}
+    - target: {fileID: -683145463720517573, guid: 83cc35fc86cee41488923e91648ae6b5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.11
+      objectReference: {fileID: 0}
     - target: {fileID: 81729908148554408, guid: 83cc35fc86cee41488923e91648ae6b5, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -1116,7 +1120,7 @@ PrefabInstance:
     - target: {fileID: 882129737928793925, guid: 83cc35fc86cee41488923e91648ae6b5, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: e9542d6ac7774824eb26bd440fe635f5, type: 2}
+      objectReference: {fileID: 2100000, guid: 491880f6293a4e546822590a9d58e2a6, type: 2}
     - target: {fileID: 919132149155446097, guid: 83cc35fc86cee41488923e91648ae6b5, type: 3}
       propertyPath: m_Name
       value: CENA6- CENAFINAL-2002
