@@ -11,6 +11,10 @@ public class pause : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if(player == null)
+        {
+             player = GameObject.FindGameObjectWithTag("Player");
+        }
 
     }
 

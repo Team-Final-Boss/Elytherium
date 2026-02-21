@@ -23,6 +23,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Forest.unity
     guid: faf04ff059a347941b235f45492473a6
+  - enabled: 1
+    path: Assets/Scenes/Laboratory.unity
+    guid: 6ebb604c292d86443bc64588cfe68391
+  - enabled: 1
+    path: Assets/Scenes/FinalCave.unity
+    guid: 6cd3a7995257a4d40bfec7a089afcc02
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

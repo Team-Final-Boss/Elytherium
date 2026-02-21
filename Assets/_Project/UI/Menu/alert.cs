@@ -12,6 +12,8 @@ public class alert : MonoBehaviour
     private GameObject player;
     private PlayerController moveScript;
 
+    public interactScript interact;
+
     void Start()
     {
         GameObject gm = GameObject.FindGameObjectWithTag("GameController");
@@ -69,6 +71,7 @@ public class alert : MonoBehaviour
         saveScript.missionComplete = 8;
         saveScript.moral += 10;
         moveScript.EnableMovement();
+        interact.enabled = false;
 
         gameObject.SetActive(false);
     }
