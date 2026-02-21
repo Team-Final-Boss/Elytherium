@@ -110,6 +110,10 @@ public class interactScript : MonoBehaviour
                 {
                     saveScript.missionComplete = 3;
                 }
+                else if(saveScript.missionComplete > 6)
+                {
+                    saveScript.missionComplete = 9;
+                }
 
                 alert.SetActive(!alert.activeSelf);
 
@@ -195,6 +199,12 @@ public class interactScript : MonoBehaviour
                 {
                     Debug.LogError("MoveScript não encontrado no Player!");
                 }
+
+                break;
+            case 10:
+
+                teleporter1 teleport1 = GetComponent<teleporter1>();
+                teleport1.teleport1();
 
                 break;
             default:
