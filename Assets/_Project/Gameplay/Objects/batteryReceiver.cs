@@ -8,6 +8,8 @@ public class batteryReceiver : MonoBehaviour
     public GameObject cutsceneCamera;
     public GameObject playerCamera;
 
+    public GameObject batteryposition;
+
     public GameObject bridge;
 
     public GameObject wall;
@@ -45,7 +47,7 @@ public class batteryReceiver : MonoBehaviour
     void teleportBattery(Collider other)
     {
         hasBattery = true;
-            other.gameObject.transform.position = this.transform.position;
+            other.gameObject.transform.position = batteryposition.transform.position;
             other.gameObject.transform.rotation = this.transform.rotation;
             other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
            
