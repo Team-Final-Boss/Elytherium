@@ -125,7 +125,6 @@ public class Attack : MonoBehaviour
         {
             if (other.TryGetComponent(out Elytherium elytherium))
             {
-                StartCoroutine(ShakeTarget(other.transform));
                 elytherium.CollectElytherium();
             }
         }

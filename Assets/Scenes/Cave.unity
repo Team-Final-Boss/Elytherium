@@ -7792,7 +7792,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 1cd1a1f799be993428aeae2861a2656b, type: 2}
     - target: {fileID: -7661746444069796996, guid: 7c877e88edfa7f448bbb553f807252ca, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7482125139075304846, guid: 7c877e88edfa7f448bbb553f807252ca, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -8146,6 +8146,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -7661746444069796996, guid: 7c877e88edfa7f448bbb553f807252ca, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1249775232}
+    - targetCorrespondingSourceObject: {fileID: -7661746444069796996, guid: 7c877e88edfa7f448bbb553f807252ca, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1249775236}
     - targetCorrespondingSourceObject: {fileID: 1362505485598257238, guid: 7c877e88edfa7f448bbb553f807252ca, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1249775224}
@@ -8357,6 +8360,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1249775236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249775220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e349bf0cd1d8f64b939b28d06f2e824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemCollectable
+  dissolveProperty: _DissolveAmount
+  dissolveDuration: 1
 --- !u!1 &1249856850
 GameObject:
   m_ObjectHideFlags: 0
