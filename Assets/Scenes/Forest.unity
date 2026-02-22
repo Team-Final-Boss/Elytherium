@@ -2659,6 +2659,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
       objectReference: {fileID: 2100000, guid: 2bb893a5549ed9340b96958d47a66f95, type: 2}
+    - target: {fileID: -1807970279642858887, guid: eb7a745bfd340334fbb68cb06f028def, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: -1660384031183063813, guid: eb7a745bfd340334fbb68cb06f028def, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -2690,6 +2694,10 @@ PrefabInstance:
     - target: {fileID: -850933336523215638, guid: eb7a745bfd340334fbb68cb06f028def, type: 3}
       propertyPath: m_LocalPosition.z
       value: 24.82
+      objectReference: {fileID: 0}
+    - target: {fileID: -674449036139524865, guid: eb7a745bfd340334fbb68cb06f028def, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: eb7a745bfd340334fbb68cb06f028def, type: 3}
       propertyPath: m_Name
@@ -2731,6 +2739,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 1a43b8ea0f1d92243a3ebfa018fe45e9, type: 2}
+    - target: {fileID: 6572683484597976625, guid: eb7a745bfd340334fbb68cb06f028def, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6776170547591315621, guid: eb7a745bfd340334fbb68cb06f028def, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -7641,7 +7653,7 @@ GameObject:
   - component: {fileID: 4931218027498757394}
   - component: {fileID: 4876933052718409489}
   - component: {fileID: 1305037034773928956}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8382,7 +8394,7 @@ GameObject:
   - component: {fileID: 7685259906864784341}
   - component: {fileID: 508709923348944961}
   - component: {fileID: 7339356833121530882}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plane.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
