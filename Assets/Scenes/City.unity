@@ -7528,7 +7528,7 @@ GameObject:
   - component: {fileID: 8622353168315637397}
   - component: {fileID: 4356012028097266676}
   - component: {fileID: 220048890745254512}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bridge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7692,7 +7692,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: dd0c68c7fc0f4b04292817a8d15d1049, type: 2}
+  - {fileID: 2100000, guid: f0be56b4f7e03494fb5a1b02758b11a0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
