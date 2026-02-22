@@ -23,6 +23,7 @@ public class dialogueID2Pt2 : MonoBehaviour
         saveScript.missionComplete = 4;
         dialogueScript.dialogoAtual += 1;
         blackscreen.StartTeleport(positionTeleportOther);
+        saveScript.moral += 10;
         
         dialogueScript.passDialogue();
         bridge.SetActive(false);
@@ -35,6 +36,7 @@ public class dialogueID2Pt2 : MonoBehaviour
         saveScript.missionComplete = 4;
         dialogueScript.dialogoAtual += 1;
         blackscreen.StartTeleportOther(positionTeleportOther);
+        saveScript.moral -= 10;
         
         dialogueScript.passDialogue();
         bridge.SetActive(false);

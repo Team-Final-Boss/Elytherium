@@ -10,16 +10,16 @@ public class ConfigScript : MonoBehaviour
 
     public int language = 0;
 
-   public int timesaved = 0;
+    public int timesaved = 0;
     private string savePath;
 
-void Awake()
-{
-    DontDestroyOnLoad(gameObject);
-}
+    void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
 
 
- 
+
     void Start()
     {
         savePath = Application.persistentDataPath + "/config.json";
@@ -34,6 +34,7 @@ void Awake()
         data.brightness = brightness;
         data.language = language;
         data.timesaved = timesaved;
+        ApplyVolume();
 
         string json = JsonUtility.ToJson(data, true);
 
@@ -54,6 +55,7 @@ void Awake()
             volume = data.volume;
             brightness = data.brightness;
             language = data.language;
+            ApplyVolume();
 
             Debug.Log("Configurações carregadas!");
         }
@@ -61,6 +63,11 @@ void Awake()
         {
             Debug.Log("Nenhuma configuração encontrada.");
         }
+    }
+
+    public void ApplyVolume()
+    {
+        AudioListener.volume = volume / 100f;
     }
 }
 

@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 /// <summary>
 ///  The Attack class manages the player's attack hitbox, enabling and disabling it during attack animations. It detects collisions with other objects and applies damage to any object that implements the Damaged interface. This script should be attached to a child GameObject of the player that has a Collider component set as a trigger, which represents the attack hitbox.
@@ -103,7 +104,9 @@ public class Attack : MonoBehaviour
         {
             if (other.TryGetComponent(out Damaged damaged))
             {
+                StartCoroutine(ShakeTarget(other.transform));
                 damaged.TakeDamage(1);
+                
             }
         }
         if (other.CompareTag("Destructible"))
@@ -114,6 +117,7 @@ public class Attack : MonoBehaviour
         {
             if (other.TryGetComponent(out Charged charged))
             {
+                StartCoroutine(ShakeTarget(other.transform));
                 charged.TakeDamage(1);
             }
         }
@@ -121,10 +125,30 @@ public class Attack : MonoBehaviour
         {
             if (other.TryGetComponent(out Elytherium elytherium))
             {
+                StartCoroutine(ShakeTarget(other.transform));
                 elytherium.CollectElytherium();
             }
         }
     }   
+
+    private IEnumerator ShakeTarget(Transform target)
+{
+    Vector3 original = target.localPosition;
+    float duration = 0.15f;
+    float strength = 0.1f;
+    float timer = 0f;
+
+    while (timer < duration)
+    {
+        float offsetX = Mathf.Sin(timer * 40f) * strength;
+        target.localPosition = original + new Vector3(offsetX, 0f, 0f);
+
+        timer += Time.deltaTime;
+        yield return null;
+    }
+
+    target.localPosition = original;
+}
 
     #endregion
 }

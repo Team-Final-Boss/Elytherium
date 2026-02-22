@@ -1,12 +1,16 @@
 using UnityEngine;
 
-public class batteryReceiver : MonoBehaviour
+public class batteryReceiver3 : MonoBehaviour
 {
 
     public bool hasBattery = false;
 
     public GameObject cutsceneCamera;
     public GameObject playerCamera;
+
+    public GameObject otherBattery;
+
+
 
     public GameObject batteryposition;
 
@@ -34,7 +38,7 @@ public class batteryReceiver : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Battery")
+        if (other.gameObject == otherBattery)
         {
             if (hasBattery == false){
             teleportBattery(other);

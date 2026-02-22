@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class batteryReceiver : MonoBehaviour
+public class batteryReceiver4 : MonoBehaviour
 {
 
     public bool hasBattery = false;
@@ -8,9 +8,11 @@ public class batteryReceiver : MonoBehaviour
     public GameObject cutsceneCamera;
     public GameObject playerCamera;
 
-    public GameObject batteryposition;
+    public GameObject otherBattery;
 
-    public GameObject bridge;
+
+
+    public GameObject batteryposition;
 
     public GameObject wall;
 
@@ -34,7 +36,7 @@ public class batteryReceiver : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Battery")
+        if (other.gameObject == otherBattery)
         {
             if (hasBattery == false){
             teleportBattery(other);
@@ -72,7 +74,7 @@ public class batteryReceiver : MonoBehaviour
             }
             else if(time <= 2)
             {
-                 bridge.SetActive(true);
+                
                  wall.SetActive(false);
             }
 
