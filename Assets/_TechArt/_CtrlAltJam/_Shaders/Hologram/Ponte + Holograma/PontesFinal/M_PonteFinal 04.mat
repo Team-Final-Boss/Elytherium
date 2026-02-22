@@ -20,13 +20,12 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_LineDissolver
-  m_Shader: {fileID: -6465566751694194690, guid: f3675119c7a67b44cac267f3449bd9fa, type: 3}
+  m_Name: M_PonteFinal 04
+  m_Shader: {fileID: -6465566751694194690, guid: 7efde93c3eb42814aa295320532966bd, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
-  m_InvalidKeywords:
-  - _EMISSION
+  m_InvalidKeywords: []
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -39,7 +38,23 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseTexture:
-        m_Texture: {fileID: 2800000, guid: 4b5fd2f99b3c36a4a8530ff2ce9695e1, type: 3}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FlickerTexture:
+        m_Texture: {fileID: 2800000, guid: ff3ac99b43046b949992821c19f0d59d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Lines2D:
+        m_Texture: {fileID: 2800000, guid: d75282a59729e154f951ba2004c316e6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_8b0187c5dc634aa08046e70aa50d3490_Out_0_Texture2D:
+        m_Texture: {fileID: 2800000, guid: ff3ac99b43046b949992821c19f0d59d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_93af5419dfd64c05a2c6c3ea8683152c_Out_0_Texture2D:
+        m_Texture: {fileID: 2800000, guid: d75282a59729e154f951ba2004c316e6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -56,15 +71,20 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DissolveAmount: 0.731
+    - _DissolveAmount: 1
+    - _FresnelStrength: 2
     - _GlowIntensity: 9.52
-    - _GlowWidth: 0.03
-    - _NoiseIntensity: 6.79
+    - _GlowWidth: 0.01
+    - _NoiseIntensity: 15
     - _NoiseStrenght: 0.12
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _Sine: 2
     m_Colors:
-    - _GlowColor: {r: 11.984314, g: 0, b: 3.6638026, a: 0}
-    - _YBounds: {r: -0.2, g: 100, b: 0, a: 0}
+    - _FresnelColor: {r: 13.286034, g: 63.10865, b: 0, a: 1}
+    - _GlowColor: {r: 2.4414659, g: 17.935396, b: 0, a: 0}
+    - _LinesSpeed: {r: 0, g: 0, b: 0, a: 0}
+    - _LinesTilling: {r: 1, g: 1, b: 0, a: 0}
+    - _YBounds: {r: 250, g: 180, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
