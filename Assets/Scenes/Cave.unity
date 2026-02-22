@@ -2317,6 +2317,10 @@ PrefabInstance:
       value: Elytherium (1)
       objectReference: {fileID: 0}
     - target: {fileID: 548046467019149905, guid: a297e3e9838e3554a9e4b2f8137c115f, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 548046467019149905, guid: a297e3e9838e3554a9e4b2f8137c115f, type: 3}
       propertyPath: m_TagString
       value: Elytherium
       objectReference: {fileID: 0}
@@ -4232,6 +4236,10 @@ PrefabInstance:
       value: Elytherium (5)
       objectReference: {fileID: 0}
     - target: {fileID: 548046467019149905, guid: a297e3e9838e3554a9e4b2f8137c115f, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 548046467019149905, guid: a297e3e9838e3554a9e4b2f8137c115f, type: 3}
       propertyPath: m_TagString
       value: Elytherium
       objectReference: {fileID: 0}
@@ -4823,6 +4831,10 @@ PrefabInstance:
       value: Elytherium (4)
       objectReference: {fileID: 0}
     - target: {fileID: 548046467019149905, guid: a297e3e9838e3554a9e4b2f8137c115f, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 548046467019149905, guid: a297e3e9838e3554a9e4b2f8137c115f, type: 3}
       propertyPath: m_TagString
       value: Elytherium
       objectReference: {fileID: 0}
@@ -5100,6 +5112,10 @@ PrefabInstance:
     - target: {fileID: 548046467019149905, guid: a297e3e9838e3554a9e4b2f8137c115f, type: 3}
       propertyPath: m_Name
       value: Elytherium (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 548046467019149905, guid: a297e3e9838e3554a9e4b2f8137c115f, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 548046467019149905, guid: a297e3e9838e3554a9e4b2f8137c115f, type: 3}
       propertyPath: m_TagString
@@ -5389,6 +5405,10 @@ PrefabInstance:
     - target: {fileID: 548046467019149905, guid: a297e3e9838e3554a9e4b2f8137c115f, type: 3}
       propertyPath: m_Name
       value: Elytherium (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 548046467019149905, guid: a297e3e9838e3554a9e4b2f8137c115f, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 548046467019149905, guid: a297e3e9838e3554a9e4b2f8137c115f, type: 3}
       propertyPath: m_TagString
@@ -6424,6 +6444,10 @@ PrefabInstance:
     - target: {fileID: 548046467019149905, guid: a297e3e9838e3554a9e4b2f8137c115f, type: 3}
       propertyPath: m_Name
       value: Elytherium (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 548046467019149905, guid: a297e3e9838e3554a9e4b2f8137c115f, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 548046467019149905, guid: a297e3e9838e3554a9e4b2f8137c115f, type: 3}
       propertyPath: m_TagString
@@ -7912,6 +7936,10 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 8c8c1a258c9ace345ad13727126655dd, type: 2}
     - target: {fileID: -674449036139524865, guid: 7c877e88edfa7f448bbb553f807252ca, type: 3}
       propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -663250547133819257, guid: 7c877e88edfa7f448bbb553f807252ca, type: 3}
+      propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -643969165547135428, guid: 7c877e88edfa7f448bbb553f807252ca, type: 3}
@@ -8028,7 +8056,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 8c8c1a258c9ace345ad13727126655dd, type: 2}
     - target: {fileID: 6507901977716847365, guid: 7c877e88edfa7f448bbb553f807252ca, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6681348261430020847, guid: 7c877e88edfa7f448bbb553f807252ca, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -9269,6 +9297,10 @@ PrefabInstance:
       value: Elytherium (9)
       objectReference: {fileID: 0}
     - target: {fileID: 548046467019149905, guid: a297e3e9838e3554a9e4b2f8137c115f, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 548046467019149905, guid: a297e3e9838e3554a9e4b2f8137c115f, type: 3}
       propertyPath: m_TagString
       value: Elytherium
       objectReference: {fileID: 0}
@@ -10390,6 +10422,10 @@ PrefabInstance:
       value: Elytherium (6)
       objectReference: {fileID: 0}
     - target: {fileID: 548046467019149905, guid: a297e3e9838e3554a9e4b2f8137c115f, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 548046467019149905, guid: a297e3e9838e3554a9e4b2f8137c115f, type: 3}
       propertyPath: m_TagString
       value: Elytherium
       objectReference: {fileID: 0}
@@ -11483,6 +11519,10 @@ PrefabInstance:
     - target: {fileID: 548046467019149905, guid: a297e3e9838e3554a9e4b2f8137c115f, type: 3}
       propertyPath: m_Name
       value: Elytherium (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 548046467019149905, guid: a297e3e9838e3554a9e4b2f8137c115f, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 548046467019149905, guid: a297e3e9838e3554a9e4b2f8137c115f, type: 3}
       propertyPath: m_TagString
@@ -13713,6 +13753,10 @@ PrefabInstance:
     - target: {fileID: 548046467019149905, guid: a297e3e9838e3554a9e4b2f8137c115f, type: 3}
       propertyPath: m_Name
       value: Elytherium
+      objectReference: {fileID: 0}
+    - target: {fileID: 548046467019149905, guid: a297e3e9838e3554a9e4b2f8137c115f, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 548046467019149905, guid: a297e3e9838e3554a9e4b2f8137c115f, type: 3}
       propertyPath: m_TagString
