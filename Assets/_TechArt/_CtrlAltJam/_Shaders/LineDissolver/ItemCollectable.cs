@@ -16,7 +16,8 @@ public class ItemCollectable : MonoBehaviour
         _material = GetComponent<Renderer>().material;
 
         // Garante que começa visível
-        _material.SetFloat(dissolveProperty, 0f);
+        _material.SetFloat(dissolveProperty, 1f);
+        Collect();
     }
 
     public void Collect()
@@ -34,15 +35,14 @@ public class ItemCollectable : MonoBehaviour
         while (t < dissolveDuration)
         {
             t += Time.deltaTime;
-            float value = t / dissolveDuration;
+            float value = 1f - (t / dissolveDuration);
 
             _material.SetFloat(dissolveProperty, value);
             yield return null;
         }
 
-        _material.SetFloat(dissolveProperty, 1f);
+        _material.SetFloat(dissolveProperty, 0f);
 
-        // Desativa ou destrói no final
-        Destroy(gameObject);
+       
     }
 }

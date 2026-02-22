@@ -71,7 +71,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DissolveAmount: 1
+    - _DissolveAmount: 0
     - _FresnelStrength: 2
     - _GlowIntensity: 9.52
     - _GlowWidth: 0.01

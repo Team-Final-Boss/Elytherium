@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4657781780826065351}
   - component: {fileID: 8284056441039404207}
   - component: {fileID: 763113620633150427}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 8348477865225717781}
   - component: {fileID: 4231890799177037087}
   - component: {fileID: 2075061975170385057}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capsule
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -444,7 +444,7 @@ GameObject:
   - component: {fileID: 8138857782239278065}
   - component: {fileID: 5767362501047863394}
   - component: {fileID: 2667884259997667827}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Interact
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -572,7 +572,7 @@ GameObject:
   - component: {fileID: 7813334641887147331}
   - component: {fileID: 6577764868474152514}
   - component: {fileID: 4131838509007606463}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AttackHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -702,7 +702,7 @@ GameObject:
   - component: {fileID: 7823841812373883486}
   - component: {fileID: 6372804905802606955}
   - component: {fileID: 7759695937919445830}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -840,7 +840,7 @@ GameObject:
   - component: {fileID: 3874128210098741820}
   - component: {fileID: 1273697159317583032}
   - component: {fileID: 8365378535306279815}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
