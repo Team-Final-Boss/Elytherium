@@ -33,7 +33,7 @@ public class dialogueID2Pt2 : MonoBehaviour
 
     public void otherPass()
     {
-        saveScript.missionComplete = 4;
+        
         dialogueScript.dialogoAtual += 1;
         blackscreen.StartTeleportOther(positionTeleportOther);
         saveScript.moral -= 10;

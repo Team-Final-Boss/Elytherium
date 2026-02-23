@@ -104,8 +104,9 @@ public class Attack : MonoBehaviour
         {
             if (other.TryGetComponent(out Damaged damaged))
             {
-                StartCoroutine(ShakeTarget(other.transform));
                 damaged.TakeDamage(1);
+                StartCoroutine(ShakeTarget(other.transform));
+                
                 
             }
         }
@@ -130,8 +131,10 @@ public class Attack : MonoBehaviour
         }
     }   
 
-    private IEnumerator ShakeTarget(Transform target)
+private IEnumerator ShakeTarget(Transform target)
 {
+    if (target == null) yield break;
+
     Vector3 original = target.localPosition;
     float duration = 0.15f;
     float strength = 0.1f;
@@ -139,6 +142,8 @@ public class Attack : MonoBehaviour
 
     while (timer < duration)
     {
+        if (target == null) yield break; // 🔥 ESSENCIAL
+
         float offsetX = Mathf.Sin(timer * 40f) * strength;
         target.localPosition = original + new Vector3(offsetX, 0f, 0f);
 
@@ -146,7 +151,8 @@ public class Attack : MonoBehaviour
         yield return null;
     }
 
-    target.localPosition = original;
+    if (target != null)
+        target.localPosition = original;
 }
 
     #endregion

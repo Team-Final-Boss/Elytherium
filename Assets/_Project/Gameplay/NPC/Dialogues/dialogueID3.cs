@@ -41,7 +41,7 @@ public class dialogueID3 : MonoBehaviour
                 dialogueText.GetComponent<TMPro.TextMeshProUGUI>().text = "Ah olá, vejo que você é novo aqui, veio de outro planeta? você já ouviu falar sobre o Elytherium?";
                 break;
             case 2:
-                dialogueText.GetComponent<TMPro.TextMeshProUGUI>().text = "O Elytherium é um material vital para a vida no planeta, de alguma maneira, sua permanencia em nossa órbita, garante toda a segurança do planeta";
+                dialogueText.GetComponent<TMPro.TextMeshProUGUI>().text = "Nós somos os Guardiões do Brilho. Para vocês, é apenas minério. Para nós, o Elytherium é o equilíbrio que mantém este planeta respirando. Use-o com reverência, ou ele cobrará o preço.";
 
                 break;
             case 3:

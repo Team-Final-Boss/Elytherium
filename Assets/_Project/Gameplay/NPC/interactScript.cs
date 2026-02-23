@@ -132,6 +132,10 @@ public class interactScript : MonoBehaviour
                 break;
 
             case 6:
+            if (saveScript.missionComplete == 3)
+                {
+                    saveScript.missionComplete = 4;
+                }
 
                 teleporter teleport = GetComponent<teleporter>();
                 teleport.teleport();
@@ -207,6 +211,21 @@ public class interactScript : MonoBehaviour
                 teleport1.teleport1();
 
                 break;
+            case 11:
+            if(saveScript.moral >= 70)
+                {
+                    SceneManager.LoadScene(9);
+                }
+            else if(saveScript.moral <= 30)
+                {
+                    SceneManager.LoadScene(10);
+                }
+                else
+                {
+                    SceneManager.LoadScene(11);
+                }
+
+            break;
             default:
 
                 Debug.Log("interact with nothing");
