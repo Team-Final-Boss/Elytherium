@@ -2047,9 +2047,57 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 200280392789434944, guid: 8c8c790b510b6ca4d811f9b9004bfb30, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 557
+      objectReference: {fileID: 0}
+    - target: {fileID: 200280392789434944, guid: 8c8c790b510b6ca4d811f9b9004bfb30, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 465
+      objectReference: {fileID: 0}
+    - target: {fileID: 1389984134761024792, guid: 8c8c790b510b6ca4d811f9b9004bfb30, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 556
+      objectReference: {fileID: 0}
+    - target: {fileID: 1389984134761024792, guid: 8c8c790b510b6ca4d811f9b9004bfb30, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 355
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645112345618325198, guid: 8c8c790b510b6ca4d811f9b9004bfb30, type: 3}
+      propertyPath: m_fontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645112345618325198, guid: 8c8c790b510b6ca4d811f9b9004bfb30, type: 3}
+      propertyPath: m_margin.z
+      value: 71.23129
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645112345618325198, guid: 8c8c790b510b6ca4d811f9b9004bfb30, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645112345618325198, guid: 8c8c790b510b6ca4d811f9b9004bfb30, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4814073831837672800, guid: 8c8c790b510b6ca4d811f9b9004bfb30, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6865172860853460074, guid: 8c8c790b510b6ca4d811f9b9004bfb30, type: 3}
+      propertyPath: m_fontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6865172860853460074, guid: 8c8c790b510b6ca4d811f9b9004bfb30, type: 3}
+      propertyPath: m_margin.z
+      value: -11.853455
+      objectReference: {fileID: 0}
+    - target: {fileID: 6865172860853460074, guid: 8c8c790b510b6ca4d811f9b9004bfb30, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6865172860853460074, guid: 8c8c790b510b6ca4d811f9b9004bfb30, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8828292991666773005, guid: 8c8c790b510b6ca4d811f9b9004bfb30, type: 3}
       propertyPath: m_Pivot.x
