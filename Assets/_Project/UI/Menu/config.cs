@@ -43,11 +43,11 @@ public class config : MonoBehaviour
     {
        
         configScript.SaveConfig();
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(8);
     }
 
     public void exitNoSave()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(8);
     }
 }

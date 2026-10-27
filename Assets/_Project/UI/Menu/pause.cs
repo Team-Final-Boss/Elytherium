@@ -55,6 +55,13 @@ public class pause : MonoBehaviour
     public void exitToMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(8);
+    }
+
+    public void resetLevel()
+    {
+        Time.timeScale = 1f;
+       Scene currentScene = SceneManager.GetActiveScene();
+       SceneManager.LoadScene(currentScene.name);
     }
 }

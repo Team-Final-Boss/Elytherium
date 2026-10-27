@@ -13,6 +13,10 @@ public class dialogueID2 : MonoBehaviour
     public GameObject dialoguecamera;
     public GameObject playercamera;
 
+    public GameObject npcImage;
+
+    public GameObject forceImage;
+
     public GameObject dialogueText;
 
     
@@ -39,13 +43,16 @@ public class dialogueID2 : MonoBehaviour
         switch (dialogoAtual)
         {
             case 1:
-                dialogueText.GetComponent<TMPro.TextMeshProUGUI>().text = "Temos um problema, esta ponte é a base de energia, e ela está fraca, não acho que vai dar pra passar nos dois";
+                dialogueText.GetComponent<TMPro.TextMeshProUGUI>().text = "Escute, a energia desta ponte está oscilando. A carga é insuficiente para manter a integridade molecular de dois corpos ao mesmo tempo. Ela vai colapsar";
                 break;
             case 2:
-                dialogueText.GetComponent<TMPro.TextMeshProUGUI>().text = "Eu preciso chegar com urgência na cidade, você poderia me deixar passar e procurar por outra maneira?";
+                dialogueText.GetComponent<TMPro.TextMeshProUGUI>().text = "Meu povo me espera com urgência. Keira, por favor... deixe-me passar. Você é jovem, tem o equipamento de Alpha. Certamente encontrará outro modo de cruzar";
             break;
             case 3:
-                dialogueText.GetComponent<TMPro.TextMeshProUGUI>().text = "[ALERTA] Vamos passar logo, inventa qualquer coisa, não podemos perder tempo com isso.";
+            npcImage.SetActive(false);
+            forceImage.SetActive(true);
+
+                dialogueText.GetComponent<TMPro.TextMeshProUGUI>().text = "Negativo, Keira. Não ceda. Nosso cronograma não permite atrasos por cortesia nativa. Invente uma desculpa e passe primeiro. O objetivo é a reserva";
                 break;
             case 4: 
             
